@@ -1,0 +1,56 @@
+# Dependencies
+node_modules
+
+# Build outputs
+dist
+
+# .NET Core build folders
+[Aa]rtifacts/
+bin/
+obj/
+
+# SvelteKit build folders
+.svelte-kit
+package
+
+# Editors
+.idea
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.sln.DotSettings
+*.csproj.DotSettings
+*.DotSettings.user
+
+# Tooling
+.nx/cache
+.eslintcache
+docs/.astro
+
+# Logs
+logs
+*.log
+.pnpm-debug.log*
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk

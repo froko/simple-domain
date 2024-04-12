@@ -1,0 +1,9 @@
+.nx
+
+apps
+docs
+libs
+
+dist
+
+pnpm-lock.yaml
