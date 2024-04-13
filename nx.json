@@ -14,7 +14,8 @@
       "dependsOn": ["^build"]
     },
     "test": {
-      "dependsOn": ["build"]
+      "dependsOn": ["build"],
+      "outputs": ["{workspaceRoot}/dist/test-results"]
     }
   },
   "plugins": ["@nx-dotnet/core"]
