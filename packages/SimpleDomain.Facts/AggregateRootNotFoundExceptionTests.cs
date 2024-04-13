@@ -1,0 +1,17 @@
+﻿namespace SimpleDomain;
+
+using SimpleDomain.TestDoubles;
+
+public class AggregateRootNotFoundExceptionTests
+{
+    [Fact]
+    public void CreatesInstance()
+    {
+        var aggregateKey = "12345";
+        var testee = new AggregateRootNotFoundException(typeof(MyStaticEventSourcedAggregateRoot), aggregateKey);
+
+        testee.Message.Should()
+            .Be(
+                "An aggregate of type SimpleDomain.TestDoubles.MyStaticEventSourcedAggregateRoot with key 12345 could not be found.");
+    }
+}
