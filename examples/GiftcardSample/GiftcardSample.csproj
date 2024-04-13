@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\packages\SimpleDomain\SimpleDomain.csproj" />
+  </ItemGroup>
+</Project>
