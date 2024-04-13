@@ -12,6 +12,7 @@
     "prepare": "nx g @nx-dotnet/core:restore",
     "format": "prettier . --write && nx run-many -t format --parallel",
     "affected": "nx affected -t lint,build,test",
+    "all": "nx run-many -t lint,build,test --parallel",
     "lint": "nx run-many -t lint --parallel",
     "build": "nx run-many -t build --parallel",
     "test": "nx run-many -t test",
