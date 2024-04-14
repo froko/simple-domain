@@ -81,4 +81,5 @@ jobs:
           comment-title: 'Unit Test Results'
           results-path: ./dist/test-results/*.trx
           coverage-path: ./dist/test-results/coverage/Cobertura.xml
+          coverage-type: cobertura
           coverage-threshold: 90
