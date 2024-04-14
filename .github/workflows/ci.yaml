@@ -7,7 +7,7 @@ on:
   pull_request:
 
 permissions:
-  contents: read
+  contents: write
   checks: write
   pull-requests: write
 
@@ -65,6 +65,14 @@ jobs:
       - name: Run affected tasks
         run: pnpm affected
 
+      - name: Create coverage report
+        if: ${{ hashFiles('dist/test-results/') != '' }}
+        uses: danielpalme/ReportGenerator-GitHub-Action@5.2.4
+        with:
+          reports: "./dist/test-results/**/coverage.cobertura.xml"
+          targetdir: "./dist/test-results/coverage"
+          reporttypes: "Cobertura"
+
       - name: Publish Test Results
         if: ${{ hashFiles('dist/test-results/') != '' }}
         uses: bibipkins/dotnet-test-reporter@v1.4.1
@@ -72,5 +80,5 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           comment-title: 'Unit Test Results'
           results-path: ./dist/test-results/*.trx
-          coverage-path: ./dist/test-results/**/coverage.opencover.xml
+          coverage-path: ./dist/test-results/coverage/Cobertura.xml
           coverage-threshold: 90

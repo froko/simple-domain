@@ -16,6 +16,7 @@
     "lint": "nx run-many -t lint --parallel",
     "build": "nx run-many -t build --parallel",
     "test": "nx run-many -t test",
+    "coverage": "reportgenerator '-reports:dist/test-results/**/coverage.cobertura.xml' '-targetdir:dist/test-results/coverage' '-reporttypes:Html' && http-server -o dist/test-results/coverage",
     "release": "semantic-release"
   },
   "devDependencies": {
@@ -24,6 +25,7 @@
     "@nx/js": "18.2.4",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
+    "http-server": "^14.1.1",
     "nx": "^18.2.3",
     "prettier": "^3.2.5",
     "semantic-release": "^23.0.8"
