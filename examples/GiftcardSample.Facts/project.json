@@ -8,7 +8,6 @@
     },
     "test": {
       "executor": "@nx-dotnet/core:test",
-      "dependsOn": ["simpledomain.facts:test"],
       "options": {
         "logger": "trx",
         "settings": "../coverlet.runsettings",
