@@ -40,7 +40,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 8
+          version: 9
           run_install: false
 
       - name: Get pnpm store directory
@@ -69,9 +69,9 @@ jobs:
         if: ${{ hashFiles('dist/test-results/') != '' }}
         uses: danielpalme/ReportGenerator-GitHub-Action@5.2.4
         with:
-          reports: "./dist/test-results/**/coverage.cobertura.xml"
-          targetdir: "./dist/test-results/coverage"
-          reporttypes: "Cobertura"
+          reports: './dist/test-results/**/coverage.cobertura.xml'
+          targetdir: './dist/test-results/coverage'
+          reporttypes: 'Cobertura'
 
       - name: Publish Test Results
         if: ${{ hashFiles('dist/test-results/') != '' }}
