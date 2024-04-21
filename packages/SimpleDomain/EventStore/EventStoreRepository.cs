@@ -30,6 +30,17 @@ internal class EventStoreRepository(IEventStore eventStore, IHaveEventStoreConfi
         return aggregateRoot;
     }
 
+    public Task Save<TAggregateRoot>(TAggregateRoot aggregateRoot, CancellationToken cancellationToken = default)
+        where TAggregateRoot : EventSourcedAggregateRoot =>
+        this.Save(aggregateRoot, new Dictionary<string, object>(), cancellationToken);
+
+    public Task Save<TAggregateRoot>(
+        TAggregateRoot aggregateRoot,
+        IDictionary<string, object> headers,
+        CancellationToken cancellationToken = default)
+        where TAggregateRoot : EventSourcedAggregateRoot =>
+        this.Save(aggregateRoot, headers, _ => Task.CompletedTask, cancellationToken);
+
     public Task Save<TAggregateRoot>(
         TAggregateRoot aggregateRoot,
         Func<object, Task> publishEvent,

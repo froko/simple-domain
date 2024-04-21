@@ -1,6 +1,6 @@
 ﻿namespace SimpleDomain.EventStore;
 
-using SimpleDomain.TestDoubles;
+using TestDoubles;
 using FakeItEasy;
 
 public class EventStoreRepositoryTests
@@ -73,7 +73,7 @@ public class EventStoreRepositoryTests
         aggregateRoot.ChangeValue(11);
         aggregateRoot.ChangeValue(22);
 
-        await this.testee.Save(aggregateRoot, _ => Task.CompletedTask);
+        await this.testee.Save(aggregateRoot);
 
         A.CallTo(() => this.eventStream
                 .Append(
@@ -93,7 +93,42 @@ public class EventStoreRepositoryTests
 
         var headers = new Dictionary<string, object> { { "UserName", "Patrick" }, { "MagicNumber", 42 } };
 
-        await this.testee.Save(aggregateRoot, headers, _ => Task.CompletedTask);
+        await this.testee.Save(aggregateRoot, headers);
+
+        A.CallTo(() => this.eventStream
+                .Append(
+                    A<IReadOnlyCollection<VersionableEvent>>._,
+                    aggregateRoot.Version, headers, default)).MustHaveHappenedOnceExactly();
+    }
+
+    [Fact]
+    public async Task SavesEventsWithoutHeadersAndEventPublicationCallback()
+    {
+        var aggregateRoot = new MyDynamicEventSourcedAggregateRoot(AggregateId);
+        aggregateRoot.ChangeValue(11);
+        aggregateRoot.ChangeValue(22);
+
+        await this.testee.Save(aggregateRoot);
+
+        A.CallTo(() => this.eventStream
+                .Append(
+                    A<IReadOnlyCollection<VersionableEvent>>._,
+                    aggregateRoot.Version,
+                    A<IDictionary<string, object>>._,
+                    default))
+            .MustHaveHappenedOnceExactly();
+    }
+
+    [Fact]
+    public async Task SavesEventsWithHeadersAndEventPublicationCallback()
+    {
+        var aggregateRoot = new MyDynamicEventSourcedAggregateRoot(AggregateId);
+        aggregateRoot.ChangeValue(11);
+        aggregateRoot.ChangeValue(22);
+
+        var headers = new Dictionary<string, object> { { "UserName", "Patrick" }, { "MagicNumber", 42 } };
+
+        await this.testee.Save(aggregateRoot, headers);
 
         A.CallTo(() => this.eventStream
                 .Append(
