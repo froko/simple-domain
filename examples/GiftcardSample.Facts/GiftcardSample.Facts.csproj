@@ -23,6 +23,7 @@
   <ItemGroup>
     <ProjectReference Include="..\GiftcardSample\GiftcardSample.csproj" />
     <ProjectReference Include="..\..\packages\SimpleDomain\SimpleDomain.csproj" />
+    <ProjectReference Include="..\..\packages\SimpleDomain.TestHarness\SimpleDomain.TestHarness.csproj" />
   </ItemGroup>
 
 </Project>
