@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiftcardSample", "GiftcardS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiftcardSample.Facts", "GiftcardSample.Facts\GiftcardSample.Facts.csproj", "{7DE147A0-E157-4AAA-AE3A-8C65E78B663E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiftcardSample.Specifications", "GiftcardSample.Specifications\GiftcardSample.Specifications.csproj", "{91B4E9F2-1081-4AA8-9E3E-95A0C7A81285}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{7DE147A0-E157-4AAA-AE3A-8C65E78B663E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DE147A0-E157-4AAA-AE3A-8C65E78B663E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DE147A0-E157-4AAA-AE3A-8C65E78B663E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91B4E9F2-1081-4AA8-9E3E-95A0C7A81285}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91B4E9F2-1081-4AA8-9E3E-95A0C7A81285}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91B4E9F2-1081-4AA8-9E3E-95A0C7A81285}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91B4E9F2-1081-4AA8-9E3E-95A0C7A81285}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
