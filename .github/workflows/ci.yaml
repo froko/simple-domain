@@ -67,7 +67,7 @@ jobs:
 
       - name: Create coverage report
         if: ${{ hashFiles('dist/test-results/') != '' }}
-        uses: danielpalme/ReportGenerator-GitHub-Action@5.2.4
+        uses: danielpalme/ReportGenerator-GitHub-Action@5.2.5
         with:
           reports: './dist/test-results/**/coverage.cobertura.xml'
           targetdir: './dist/test-results/coverage'
