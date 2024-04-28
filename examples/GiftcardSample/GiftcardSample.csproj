@@ -2,4 +2,11 @@
   <ItemGroup>
     <ProjectReference Include="..\..\packages\SimpleDomain\SimpleDomain.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MassTransit" Version="8.2.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="GiftcardSample.Facts" />
+    <InternalsVisibleTo Include="GiftcardSample.Specifications" />
+  </ItemGroup>
 </Project>

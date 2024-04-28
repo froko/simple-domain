@@ -1,6 +1,8 @@
 ﻿namespace GiftcardSample;
 
+using FluentAssertions;
 using SimpleDomain;
+using Xunit;
 
 public class GiftcardTests
 {
