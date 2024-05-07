@@ -10,10 +10,10 @@
   },
   "dependencies": {
     "@akebifiky/remark-simple-plantuml": "^1.0.2",
-    "@astrojs/check": "^0.5.10",
-    "@astrojs/starlight": "^0.21.5",
-    "astro": "^4.3.5",
-    "sharp": "^0.33.0",
+    "@astrojs/check": "^0.6.0",
+    "@astrojs/starlight": "^0.22.2",
+    "astro": "^4.7.1",
+    "sharp": "^0.33.3",
     "typescript": "^5.4.5"
   },
   "devDependencies": {
