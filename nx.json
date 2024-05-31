@@ -1,7 +1,7 @@
 {
   "tasksRunnerOptions": {
     "default": {
-      "runner": "nx/tasks-runners/default",
+      "runner": "nx-cloud",
       "options": {
         "cacheableOperations": ["format", "lint", "build", "test"]
       }
@@ -16,5 +16,7 @@
       "outputs": ["{workspaceRoot}/dist/test-results"]
     }
   },
-  "plugins": ["@nx-dotnet/core"]
+  "plugins": ["@nx-dotnet/core"],
+  "nxCloudAccessToken": "NjUzOWI1MjItOTBiMi00ZDkxLTk4OTQtYWNjZDkwZWZlMjc1fHJlYWQtd3JpdGU=",
+  "nxCloudUrl": "https://cloud.nx.app"
 }

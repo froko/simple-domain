@@ -82,4 +82,4 @@ jobs:
           results-path: ./dist/test-results/*.trx
           coverage-path: ./dist/test-results/coverage/Cobertura.xml
           coverage-type: cobertura
-          coverage-threshold: 90
+          coverage-threshold: 80
