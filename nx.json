@@ -16,6 +16,5 @@
       "outputs": ["{workspaceRoot}/dist/test-results"]
     }
   },
-  "plugins": ["@nx-dotnet/core"],
-  "nxCloudAccessToken": "MzhkNDE5ZDItM2NhOS00Y2I2LTgzNmYtNzE0MWE0OTBjMTFjfHJlYWQtd3JpdGU="
+  "plugins": ["@nx-dotnet/core"]
 }
