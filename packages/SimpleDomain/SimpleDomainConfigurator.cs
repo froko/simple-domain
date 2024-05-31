@@ -1,55 +1,19 @@
 ﻿namespace SimpleDomain;
 
+using EventStore;
+using EventStore.Persistence;
 using Microsoft.Extensions.DependencyInjection;
-
-using SimpleDomain.EventStore;
-using SimpleDomain.EventStore.Persistence;
 
 /// <summary>
 /// The simple domain configurator.
 /// </summary>
-/// <param name="collection">Dependency injection for <see cref="IServiceCollection"/>.</param>
+/// <param name="collection">Dependency injection for <see cref="IServiceCollection" />.</param>
 internal class SimpleDomainConfigurator(IServiceCollection collection)
     : IConfigureSimpleDomain, IConfigureEventStore, IHaveEventStoreConfiguration
 {
-    private SnapshotStrategy globalSnapshotStrategy = new(100);
-    private readonly List<SnapshotStrategy> snapshotStrategies = [];
     private readonly Dictionary<string, object> configurationItems = [];
-
-    /// <summary>
-    /// Completes the configuration by adding the <see cref="IHaveEventStoreConfiguration"/>
-    /// to the dependency injection container.
-    /// </summary>
-    public void Complete() => collection.AddSingleton<IHaveEventStoreConfiguration>(this);
-
-    /// <inheritdoc />
-    public IConfigureEventStore UseInMemoryEventStore()
-    {
-        this.AddConfigurationItem(InMemoryEventStore.EventDescriptors, new List<EventDescriptor>());
-        this.AddConfigurationItem(InMemoryEventStore.SnapshotDescriptors, new List<SnapshotDescriptor>());
-        collection.AddTransient<IEventStore, InMemoryEventStore>();
-        collection.AddTransient<IEventSourcedRepository, EventStoreRepository>();
-        return this;
-    }
-
-    /// <inheritdoc />
-    public void AddConfigurationItem(string key, object value) => this.configurationItems.TryAdd(key, value);
-
-    /// <inheritdoc />
-    public void AddTransient<TService, TImplementation>()
-        where TService : class
-        where TImplementation : class, TService =>
-        collection.AddTransient<TService, TImplementation>();
-
-    /// <inheritdoc />
-    public void AddSingleton<TService, TImplementation>()
-        where TService : class
-        where TImplementation : class, TService =>
-        collection.AddSingleton<TService, TImplementation>();
-
-    public void AddInstance<TService>(TService instance)
-        where TService : class =>
-        collection.AddSingleton(instance);
+    private readonly List<SnapshotStrategy> snapshotStrategies = [];
+    private SnapshotStrategy globalSnapshotStrategy = new(100);
 
     /// <inheritdoc />
     public IConfigureEventStore WithGlobalSnapshotStrategy(int threshold)
@@ -71,6 +35,25 @@ internal class SimpleDomainConfigurator(IServiceCollection collection)
     }
 
     /// <inheritdoc />
+    public IConfigureEventStore UseInMemoryEventStore()
+    {
+        this.AddConfigurationItem(InMemoryEventStore.EventDescriptors, new List<EventDescriptor>());
+        this.AddConfigurationItem(InMemoryEventStore.SnapshotDescriptors, new List<SnapshotDescriptor>());
+        collection.AddTransient<IEventStore, InMemoryEventStore>();
+        collection.AddTransient<IEventSourcedRepository, EventStoreRepository>();
+        return this;
+    }
+
+    /// <inheritdoc />
+    public void AddConfigurationItem(string key, object value) => this.configurationItems.TryAdd(key, value);
+
+    /// <inheritdoc />
+    public void AddTransient<TService, TImplementation>()
+        where TService : class
+        where TImplementation : class, TService =>
+        collection.AddTransient<TService, TImplementation>();
+
+    /// <inheritdoc />
     public SnapshotStrategy GetSnapshotStrategy<TAggregateRoot>()
         where TAggregateRoot : EventSourcedAggregateRoot
     {
@@ -86,4 +69,20 @@ internal class SimpleDomainConfigurator(IServiceCollection collection)
             : value is not T typedValue
                 ? throw new InvalidCastException()
                 : typedValue;
+
+    /// <summary>
+    /// Completes the configuration by adding the <see cref="IHaveEventStoreConfiguration" />
+    /// to the dependency injection container.
+    /// </summary>
+    public void Complete() => collection.AddSingleton<IHaveEventStoreConfiguration>(this);
+
+    /// <inheritdoc />
+    public void AddSingleton<TService, TImplementation>()
+        where TService : class
+        where TImplementation : class, TService =>
+        collection.AddSingleton<TService, TImplementation>();
+
+    public void AddInstance<TService>(TService instance)
+        where TService : class =>
+        collection.AddSingleton(instance);
 }

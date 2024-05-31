@@ -1,13 +1,13 @@
 ﻿namespace SimpleDomain;
 
-using SimpleDomain.EventStore;
+using EventStore;
 
 public interface IConfigureSimpleDomain
 {
     /// <summary>
     /// Use the in-memory event store.
     /// </summary>
-    /// <returns>An instance of <see cref="IConfigureEventStore"/> since this is a fluent configuration.</returns>
+    /// <returns>An instance of <see cref="IConfigureEventStore" /> since this is a fluent configuration.</returns>
     IConfigureEventStore UseInMemoryEventStore();
 
     /// <summary>

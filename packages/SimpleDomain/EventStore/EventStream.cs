@@ -7,7 +7,7 @@
 public abstract class EventStream<TAggregateRoot> : IEventStream where TAggregateRoot : EventSourcedAggregateRoot
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="EventStream{TAggregateRoot}"/> class.
+    /// Initializes a new instance of the <see cref="EventStream{TAggregateRoot}" /> class.
     /// </summary>
     /// <param name="aggregateId">The id of the aggregate root.</param>
     protected EventStream(string aggregateId)
@@ -58,6 +58,13 @@ public abstract class EventStream<TAggregateRoot> : IEventStream where TAggregat
     /// <inheritdoc />
     public abstract Task<ISnapshot> GetLatestSnapshot(CancellationToken cancellationToken);
 
+    /// <inheritdoc />
+    public void Dispose()
+    {
+        this.Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+
     /// <summary>
     /// Persists a single event.
     /// </summary>
@@ -82,15 +89,11 @@ public abstract class EventStream<TAggregateRoot> : IEventStream where TAggregat
     /// When overridden, checks for concurrency problems
     /// by comparing the last persisted version with the given original version.
     /// </summary>
-    /// <param name="originalVersion">The original version, calculated as expected version minus the number of events that are going to be persisted.</param>
+    /// <param name="originalVersion">
+    /// The original version, calculated as expected version minus the number of events that are
+    /// going to be persisted.
+    /// </param>
     protected virtual void CheckForConcurrencyProblems(int originalVersion) { }
-
-    /// <inheritdoc />
-    public void Dispose()
-    {
-        this.Dispose(true);
-        GC.SuppressFinalize(this);
-    }
 
     protected virtual void Dispose(bool disposing) { }
 }

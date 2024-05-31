@@ -1,7 +1,7 @@
 ﻿namespace SimpleDomain.EventStore.Persistence;
 
-using SimpleDomain.TestDoubles;
 using FakeItEasy;
+using TestDoubles;
 
 public class InMemoryIntegrationTests
 {
@@ -9,8 +9,8 @@ public class InMemoryIntegrationTests
     private const string SnapshotDescriptors = InMemoryEventStore.SnapshotDescriptors;
     private const string AggregateId = "aggregate-id";
     private readonly List<EventDescriptor> eventDescriptors = [];
-    private readonly List<SnapshotDescriptor> snapshotDescriptors = [];
     private readonly IHaveEventStoreConfiguration eventStoreConfiguration = A.Fake<IHaveEventStoreConfiguration>();
+    private readonly List<SnapshotDescriptor> snapshotDescriptors = [];
 
     public InMemoryIntegrationTests()
     {

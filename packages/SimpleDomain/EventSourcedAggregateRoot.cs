@@ -6,7 +6,7 @@
 public abstract class EventSourcedAggregateRoot : AggregateRoot, INeedVersion
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="EventSourcedAggregateRoot"/> class.
+    /// Initializes a new instance of the <see cref="EventSourcedAggregateRoot" /> class.
     /// </summary>
     protected EventSourcedAggregateRoot()
     {

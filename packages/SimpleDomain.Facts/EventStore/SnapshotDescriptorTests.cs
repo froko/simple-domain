@@ -1,6 +1,6 @@
 ﻿namespace SimpleDomain.EventStore;
 
-using SimpleDomain.TestDoubles;
+using TestDoubles;
 
 public class SnapshotDescriptorTests
 {

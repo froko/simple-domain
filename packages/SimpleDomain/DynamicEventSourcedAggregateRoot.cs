@@ -1,6 +1,6 @@
 ﻿namespace SimpleDomain;
 
-using SimpleDomain.Common;
+using Common;
 
 /// <summary>
 /// Base class for all dynamic event sourced aggregate roots.

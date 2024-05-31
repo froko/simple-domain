@@ -3,7 +3,7 @@
 using Microsoft.Extensions.DependencyInjection;
 
 /// <summary>
-/// Some extensions for the <see cref="IServiceCollection"/>.
+/// Some extensions for the <see cref="IServiceCollection" />.
 /// </summary>
 public static class ServiceCollectionExtensions
 {

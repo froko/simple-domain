@@ -1,15 +1,15 @@
 ﻿namespace SimpleDomain.EventStore;
 
-using TestDoubles;
 using FakeItEasy;
+using TestDoubles;
 
 public class EventStoreRepositoryTests
 {
     private const string AggregateId = "Test-1234";
+    private readonly IHaveEventStoreConfiguration configuration = A.Fake<IHaveEventStoreConfiguration>();
 
     private readonly IEventStore eventStore = A.Fake<IEventStore>();
     private readonly IEventStream eventStream = A.Fake<IEventStream>();
-    private readonly IHaveEventStoreConfiguration configuration = A.Fake<IHaveEventStoreConfiguration>();
     private readonly EventStoreRepository testee;
 
     public EventStoreRepositoryTests()
@@ -96,9 +96,9 @@ public class EventStoreRepositoryTests
         await this.testee.Save(aggregateRoot, headers);
 
         A.CallTo(() => this.eventStream
-                .Append(
-                    A<IReadOnlyCollection<VersionableEvent>>._,
-                    aggregateRoot.Version, headers, default)).MustHaveHappenedOnceExactly();
+            .Append(
+                A<IReadOnlyCollection<VersionableEvent>>._,
+                aggregateRoot.Version, headers, default)).MustHaveHappenedOnceExactly();
     }
 
     [Fact]

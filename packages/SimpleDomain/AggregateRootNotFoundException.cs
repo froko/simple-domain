@@ -6,7 +6,7 @@
 public class AggregateRootNotFoundException : Exception
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="AggregateRootNotFoundException"/> class.
+    /// Initializes a new instance of the <see cref="AggregateRootNotFoundException" /> class.
     /// </summary>
     /// <param name="aggregateType">The type of the aggregate root.</param>
     /// <param name="aggregateKey">The key of the aggregate root.</param>

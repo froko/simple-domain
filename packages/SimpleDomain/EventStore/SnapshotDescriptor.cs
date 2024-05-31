@@ -23,7 +23,7 @@ public record SnapshotDescriptor(
     /// <param name="aggregateId">The id of the aggregate root.</param>
     /// <param name="snapshot">The snapshot.</param>
     /// <typeparam name="TAggregateRoot">The type of the aggregate root.</typeparam>
-    /// <returns>A new instance of <see cref="SnapshotDescriptor"/>.</returns>
+    /// <returns>A new instance of <see cref="SnapshotDescriptor" />.</returns>
     public static SnapshotDescriptor From<TAggregateRoot>(
         string aggregateId,
         ISnapshot snapshot)
