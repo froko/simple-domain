@@ -28,7 +28,7 @@
     "http-server": "^14.1.1",
     "nx": "^19.1.1",
     "prettier": "^3.2.5",
-    "semantic-release": "^23.1.1"
+    "semantic-release": "^24.0.0"
   },
   "packageManager": "pnpm@9.1.4"
 }
