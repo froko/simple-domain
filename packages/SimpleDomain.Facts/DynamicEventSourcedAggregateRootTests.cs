@@ -1,6 +1,6 @@
 ﻿namespace SimpleDomain;
 
-using SimpleDomain.TestDoubles;
+using TestDoubles;
 
 public class DynamicEventSourcedAggregateRootTests
 {

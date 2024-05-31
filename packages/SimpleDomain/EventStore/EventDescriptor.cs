@@ -28,7 +28,7 @@ public record EventDescriptor(
     /// <param name="versionableEvent">The versionable event.</param>
     /// <param name="headers">A list of arbitrary headers.</param>
     /// <typeparam name="TAggregateRoot">The type of the aggregate root.</typeparam>
-    /// <returns>A new instance of <see cref="EventDescriptor"/>.</returns>
+    /// <returns>A new instance of <see cref="EventDescriptor" />.</returns>
     public static EventDescriptor From<TAggregateRoot>(
         string aggregateId,
         VersionableEvent versionableEvent,

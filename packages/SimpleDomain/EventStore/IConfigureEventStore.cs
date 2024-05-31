@@ -9,7 +9,7 @@ public interface IConfigureEventStore
     /// Defines a global snapshot strategy.
     /// </summary>
     /// <param name="threshold">The version threshold on which a snapshot is taken.</param>
-    /// <returns>An instance of <see cref="IConfigureEventStore"/> since this is a fluent configuration.</returns>
+    /// <returns>An instance of <see cref="IConfigureEventStore" /> since this is a fluent configuration.</returns>
     IConfigureEventStore WithGlobalSnapshotStrategy(int threshold);
 
     /// <summary>
@@ -17,7 +17,7 @@ public interface IConfigureEventStore
     /// </summary>
     /// <param name="threshold">The version threshold on which a snapshot is taken.</param>
     /// <typeparam name="TAggregateRoot">The type of the aggregate root.</typeparam>
-    /// <returns>An instance of <see cref="IConfigureEventStore"/> since this is a fluent configuration.</returns>
+    /// <returns>An instance of <see cref="IConfigureEventStore" /> since this is a fluent configuration.</returns>
     IConfigureEventStore WithSnapshotStrategyFor<TAggregateRoot>(int threshold)
         where TAggregateRoot : EventSourcedAggregateRoot;
 }

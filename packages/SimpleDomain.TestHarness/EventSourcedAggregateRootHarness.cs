@@ -9,15 +9,15 @@ using FluentAssertions;
 public class EventSourcedAggregateRootHarness<TAggregateRoot>
     where TAggregateRoot : EventSourcedAggregateRoot
 {
-    private Func<TAggregateRoot> create = Activator.CreateInstance<TAggregateRoot>;
-    private Action<TAggregateRoot> execute = _ => { };
-    private EventHistory eventHistory = EventHistory.Create();
-
-    private TAggregateRoot aggregateRoot;
     private Exception aggregateException = null!;
 
+    private TAggregateRoot aggregateRoot;
+    private Func<TAggregateRoot> create = Activator.CreateInstance<TAggregateRoot>;
+    private EventHistory eventHistory = EventHistory.Create();
+    private Action<TAggregateRoot> execute = _ => { };
+
     /// <summary>
-    /// Initializes a new instance of the <see cref="EventSourcedAggregateRootHarness{TAggregateRoot}"/> class.
+    /// Initializes a new instance of the <see cref="EventSourcedAggregateRootHarness{TAggregateRoot}" /> class.
     /// </summary>
     public EventSourcedAggregateRootHarness() => this.aggregateRoot = this.create();
 

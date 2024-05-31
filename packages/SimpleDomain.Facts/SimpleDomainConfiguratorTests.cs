@@ -1,10 +1,9 @@
 ﻿namespace SimpleDomain;
 
+using EventStore;
+using EventStore.Persistence;
 using Microsoft.Extensions.DependencyInjection;
-
-using SimpleDomain.EventStore;
-using SimpleDomain.EventStore.Persistence;
-using SimpleDomain.TestDoubles;
+using TestDoubles;
 
 public class SimpleDomainConfiguratorTests
 {
