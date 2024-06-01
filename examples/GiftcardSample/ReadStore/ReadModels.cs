@@ -14,4 +14,3 @@ public record GiftcardTransaction(
     decimal Balance,
     decimal Amount,
     int Revision);
-
