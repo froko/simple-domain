@@ -1,8 +1,14 @@
 ﻿namespace SimpleDomain.EventStore;
 
+/// <summary>
+/// The EventStore repository.
+/// </summary>
+/// <param name="eventStore">Dependency injection for <see cref="IEventStore"/>.</param>
+/// <param name="configuration">Dependency injection for <see cref="IHaveEventStoreConfiguration"/>.</param>
 internal class EventStoreRepository(IEventStore eventStore, IHaveEventStoreConfiguration configuration)
     : IEventSourcedRepository
 {
+    /// <inheritdoc />
     public async Task<TAggregateRoot> GetById<TAggregateRoot>(
         string aggregateId,
         CancellationToken cancellationToken = default)
@@ -16,24 +22,24 @@ internal class EventStoreRepository(IEventStore eventStore, IHaveEventStoreConfi
             var snapshot = await eventStream.GetLatestSnapshot(cancellationToken);
             aggregateRoot.LoadFromSnapshot(snapshot);
 
-            var eventHistory = await eventStream.ReplayFromSnapshot(snapshot, cancellationToken);
-            aggregateRoot.LoadFromEventHistory(eventHistory);
+            var events = await eventStream.ReplayFromSnapshot(snapshot, cancellationToken);
+            await aggregateRoot.LoadFromEventHistory(events);
         }
         else
         {
-            var eventHistory = await eventStream.Replay(cancellationToken);
-            if (eventHistory.IsEmpty) throw new AggregateRootNotFoundException(typeof(TAggregateRoot), aggregateId);
-
-            aggregateRoot.LoadFromEventHistory(eventHistory);
+            var events = await eventStream.Replay(cancellationToken);
+            await aggregateRoot.LoadFromEventHistory(events);
         }
 
         return aggregateRoot;
     }
 
+    /// <inheritdoc />
     public Task Save<TAggregateRoot>(TAggregateRoot aggregateRoot, CancellationToken cancellationToken = default)
         where TAggregateRoot : EventSourcedAggregateRoot =>
         this.Save(aggregateRoot, new Dictionary<string, object>(), cancellationToken);
 
+    /// <inheritdoc />
     public Task Save<TAggregateRoot>(
         TAggregateRoot aggregateRoot,
         IDictionary<string, object> headers,
@@ -41,6 +47,7 @@ internal class EventStoreRepository(IEventStore eventStore, IHaveEventStoreConfi
         where TAggregateRoot : EventSourcedAggregateRoot =>
         this.Save(aggregateRoot, headers, _ => Task.CompletedTask, cancellationToken);
 
+    /// <inheritdoc />
     public Task Save<TAggregateRoot>(
         TAggregateRoot aggregateRoot,
         Func<object, Task> publishEvent,
@@ -48,6 +55,7 @@ internal class EventStoreRepository(IEventStore eventStore, IHaveEventStoreConfi
         where TAggregateRoot : EventSourcedAggregateRoot =>
         this.Save(aggregateRoot, new Dictionary<string, object>(), publishEvent, cancellationToken);
 
+    /// <inheritdoc />
     public async Task Save<TAggregateRoot>(
         TAggregateRoot aggregateRoot,
         IDictionary<string, object> headers,
@@ -66,8 +74,8 @@ internal class EventStoreRepository(IEventStore eventStore, IHaveEventStoreConfi
     }
 
     private Task<IEventStream> OpenStream<TAggregateRoot>(string aggregateId, CancellationToken cancellationToken)
-        where TAggregateRoot : EventSourcedAggregateRoot =>
-        eventStore.OpenStream<TAggregateRoot>(aggregateId, cancellationToken);
+        where TAggregateRoot : EventSourcedAggregateRoot
+        => eventStore.OpenStream<TAggregateRoot>(aggregateId, cancellationToken);
 
     private Task SaveSnapshotIfRequired<TAggregateRoot>(
         TAggregateRoot aggregateRoot,

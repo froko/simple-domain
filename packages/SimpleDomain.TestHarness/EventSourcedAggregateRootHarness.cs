@@ -3,9 +3,9 @@
 using FluentAssertions;
 
 /// <summary>
-/// The event source aggregate root harness
+/// The event source aggregate root harness.
 /// </summary>
-/// <typeparam name="TAggregateRoot">The type of the aggregate root</typeparam>
+/// <typeparam name="TAggregateRoot">The type of the aggregate root.</typeparam>
 public class EventSourcedAggregateRootHarness<TAggregateRoot>
     where TAggregateRoot : EventSourcedAggregateRoot
 {
@@ -13,7 +13,7 @@ public class EventSourcedAggregateRootHarness<TAggregateRoot>
 
     private TAggregateRoot aggregateRoot;
     private Func<TAggregateRoot> create = Activator.CreateInstance<TAggregateRoot>;
-    private EventHistory eventHistory = EventHistory.Create();
+    private IList<IEvent> eventHistory = new List<IEvent>();
     private Action<TAggregateRoot> execute = _ => { };
 
     /// <summary>
@@ -23,29 +23,29 @@ public class EventSourcedAggregateRootHarness<TAggregateRoot>
 
     /// <summary>
     /// Sets the aggregate root under test into the desired state
-    /// by replaying events from history
+    /// by replaying events from history.
     /// </summary>
-    /// <param name="events">The event history</param>
-    public void LoadFromHistory(params IEvent[] events) => this.eventHistory = new EventHistory(events);
+    /// <param name="events">The event history.</param>
+    public void LoadFromHistory(params IEvent[] events) => this.eventHistory = new List<IEvent>(events);
 
     /// <summary>
     /// Creates a new aggregate root under test.
-    /// You only need to do this if you want to test a no parameterless constructor
+    /// You only need to do this if you want to test a no parameterless constructor.
     /// </summary>
-    /// <param name="func">The function to create the aggregate root</param>
+    /// <param name="func">The function to create the aggregate root.</param>
     public void Create(Func<TAggregateRoot> func) => this.create = func;
 
     /// <summary>
-    /// Executes behavior of the aggregate root under test
+    /// Executes behavior of the aggregate root under test.
     /// </summary>
-    /// <param name="action">The action to perform against the aggregate root</param>
+    /// <param name="action">The action to perform against the aggregate root.</param>
     public void Execute(Action<TAggregateRoot> action) => this.execute = action;
 
     /// <summary>
-    /// Checks the occurrence of a specific exception
+    /// Checks the occurrence of a specific exception.
     /// </summary>
-    /// <typeparam name="TException">The type of the exception</typeparam>
-    /// <param name="message">The expected exception message</param>
+    /// <typeparam name="TException">The type of the exception.</typeparam>
+    /// <param name="message">The expected exception message.</param>
     public void ShouldFailWith<TException>(string message)
         where TException : Exception
     {
@@ -56,9 +56,9 @@ public class EventSourcedAggregateRootHarness<TAggregateRoot>
     }
 
     /// <summary>
-    /// Checks the occurrence of a specific event
+    /// Checks the occurrence of a specific event.
     /// </summary>
-    /// <typeparam name="TEvent">The type of the event</typeparam>
+    /// <typeparam name="TEvent">The type of the event.</typeparam>
     public void ShouldEmitEventLike<TEvent>(Func<TEvent, bool> expectation)
         where TEvent : class, IEvent
     {
@@ -70,10 +70,10 @@ public class EventSourcedAggregateRootHarness<TAggregateRoot>
     }
 
     /// <summary>
-    /// Checks the occurrence of a specific event
+    /// Checks the occurrence of a specific event.
     /// </summary>
-    /// <typeparam name="TEvent">The type of the event</typeparam>
-    /// <param name="expectedEvent">An instance of the expected event in order to compare the properties</param>
+    /// <typeparam name="TEvent">The type of the event.</typeparam>
+    /// <param name="expectedEvent">An instance of the expected event in order to compare the properties.</param>
     public void ShouldEmitEventLike<TEvent>(TEvent expectedEvent)
         where TEvent : class, IEvent
     {
@@ -86,7 +86,7 @@ public class EventSourcedAggregateRootHarness<TAggregateRoot>
         try
         {
             this.aggregateRoot = this.create();
-            this.aggregateRoot.LoadFromEventHistory(this.eventHistory);
+            this.aggregateRoot.LoadFromEventHistory(this.eventHistory.ToAsyncEnumerable()).Wait();
 
             this.execute(this.aggregateRoot);
         }

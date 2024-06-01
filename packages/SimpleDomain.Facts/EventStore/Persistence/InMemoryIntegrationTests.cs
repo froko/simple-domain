@@ -29,18 +29,18 @@ public class InMemoryIntegrationTests
         aggregateRoot.ChangeValue(22);
 
         using var eventStream = await this.CreateEventStream();
-        await eventStream.Open(default);
         await eventStream.Append(
             aggregateRoot.UncommittedEvents.OfType<VersionableEvent>().ToList(),
             aggregateRoot.Version,
             new Dictionary<string, object>(),
             default);
 
-        var eventHistory = await eventStream.Replay(default);
-        eventHistory.Should().HaveCount(3);
-        eventHistory.Should().Contain(e => (e as ValueEvent)!.Value == 0);
-        eventHistory.Should().Contain(e => (e as ValueEvent)!.Value == 11);
-        eventHistory.Should().Contain(e => (e as ValueEvent)!.Value == 22);
+        var asyncEventsFromStream = await eventStream.Replay(default);
+        var events = await asyncEventsFromStream.ToListAsync();
+        events.Should().HaveCount(3);
+        events.Should().Contain(e => (e as ValueEvent)!.Value == 0);
+        events.Should().Contain(e => (e as ValueEvent)!.Value == 11);
+        events.Should().Contain(e => (e as ValueEvent)!.Value == 22);
     }
 
     [Fact]
@@ -77,7 +77,8 @@ public class InMemoryIntegrationTests
         hasSnapshot.Should().BeTrue();
         snapshotFromEventStream.Should().BeEquivalentTo(secondSnapshot);
 
-        var eventHistorySinceLatestSnapshot = await eventStream.ReplayFromSnapshot(snapshotFromEventStream, default);
+        var asyncEventsFromStream = await eventStream.ReplayFromSnapshot(snapshotFromEventStream, default);
+        var eventHistorySinceLatestSnapshot = await asyncEventsFromStream.ToListAsync();
         eventHistorySinceLatestSnapshot.Should().HaveCount(3);
         eventHistorySinceLatestSnapshot.Should().Contain(e => (e as ValueEvent)!.Value == 55);
         eventHistorySinceLatestSnapshot.Should().Contain(e => (e as ValueEvent)!.Value == 66);

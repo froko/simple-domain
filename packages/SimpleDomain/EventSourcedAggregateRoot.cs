@@ -32,15 +32,18 @@ public abstract class EventSourcedAggregateRoot : AggregateRoot, INeedVersion
     /// Builds up the aggregate root from a snapshot.
     /// </summary>
     /// <param name="snapshot"></param>
-    public virtual void LoadFromSnapshot(ISnapshot snapshot) { }
+    public virtual void LoadFromSnapshot(ISnapshot snapshot)
+    {
+    }
 
     /// <summary>
     /// Builds up the aggregate root from a list of events.
     /// </summary>
-    /// <param name="eventHistory">The history as a list of events.</param>
-    public void LoadFromEventHistory(EventHistory eventHistory)
+    /// <param name="events">The list of events.</param>
+    public async Task LoadFromEventHistory(IAsyncEnumerable<IEvent> events)
     {
-        foreach (var @event in eventHistory) this.ApplyEvent(@event, false);
+        await foreach (var @event in events)
+            this.ApplyEvent(@event, false);
     }
 
     /// <summary>
@@ -60,7 +63,8 @@ public abstract class EventSourcedAggregateRoot : AggregateRoot, INeedVersion
         this.Version++;
         this.DoTransition(@event);
 
-        if (!isNew) return;
+        if (!isNew)
+            return;
 
         base.ApplyEvent(new VersionableEvent(@event, this.Version, DateTimeOffset.UtcNow));
     }

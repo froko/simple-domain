@@ -36,16 +36,16 @@ public interface IEventStream : IDisposable
     /// Replays all events of an aggregate root.
     /// </summary>
     /// <param name="cancellationToken">The token to monitor for cancellation requests.</param>
-    /// <returns>An event history representing a list of events.</returns>
-    Task<EventHistory> Replay(CancellationToken cancellationToken);
+    /// <returns>An async stream of events.</returns>
+    Task<IAsyncEnumerable<IEvent>> Replay(CancellationToken cancellationToken);
 
     /// <summary>
     /// Replays all events of an aggregate root from a given snapshot.
     /// </summary>
     /// <param name="snapshot">The snapshot.</param>
     /// <param name="cancellationToken">The token to monitor for cancellation requests.</param>
-    /// <returns>An event history representing a list of events.</returns>
-    Task<EventHistory> ReplayFromSnapshot(ISnapshot snapshot, CancellationToken cancellationToken);
+    /// <returns>An async stream of events.</returns>
+    Task<IAsyncEnumerable<IEvent>> ReplayFromSnapshot(ISnapshot snapshot, CancellationToken cancellationToken);
 
     /// <summary>
     /// Returns the fact that there exists at least one snapshot.
