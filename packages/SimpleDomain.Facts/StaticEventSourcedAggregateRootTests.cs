@@ -65,19 +65,19 @@ public class StaticEventSourcedAggregateRootTests
     }
 
     [Fact]
-    public void LoadsFromEventHistory()
+    public async Task LoadsFromEventHistory()
     {
-        var eventHistory = EventHistory.Create(new ValueEvent(11), new ValueEvent(22), new ValueEvent(33));
-        this.testee.LoadFromEventHistory(eventHistory);
+        var events = new[] { new ValueEvent(11), new ValueEvent(22), new ValueEvent(33) }.ToAsyncEnumerable();
+        await this.testee.LoadFromEventHistory(events);
 
         this.testee.Value.Should().Be(33);
     }
 
     [Fact]
-    public void LoadsFromSnapshot()
+    public async Task LoadsFromSnapshot()
     {
-        var eventHistory = EventHistory.Create(new ValueEvent(11), new ValueEvent(22), new ValueEvent(33));
-        this.testee.LoadFromEventHistory(eventHistory);
+        var events = new[] { new ValueEvent(11), new ValueEvent(22), new ValueEvent(33) }.ToAsyncEnumerable();
+        await this.testee.LoadFromEventHistory(events);
 
         var snapshot = this.testee.CreateSnapshot();
         var newTestee = new MyDynamicEventSourcedAggregateRoot();

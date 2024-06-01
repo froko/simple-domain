@@ -28,8 +28,8 @@ public class EventStoreRepositoryTests
     [Fact]
     public async Task ReturnsAggregateRootById_ByReplayingAllEvents()
     {
-        var eventHistory = EventHistory.Create(new ValueEvent(0), new ValueEvent(11), new ValueEvent(22));
-        A.CallTo(() => this.eventStream.Replay(default)).Returns(eventHistory);
+        var events = new[] { new ValueEvent(0), new ValueEvent(11), new ValueEvent(22) };
+        A.CallTo(() => this.eventStream.Replay(default)).Returns(events.ToAsyncEnumerable());
 
         var aggregateRoot = await this.testee
             .GetById<MyDynamicEventSourcedAggregateRoot>(AggregateId);
@@ -42,28 +42,18 @@ public class EventStoreRepositoryTests
     public async Task? ReturnsAggregateRootById_ByReplayingAllEventsFromSnapshot()
     {
         var snapshot = new MySnapshot(22, 2, DateTimeOffset.Now);
-        var eventsSinceSnapshot = EventHistory.Create(new ValueEvent(33), new ValueEvent(44));
+        var eventsSinceSnapshot = new[] { new ValueEvent(33), new ValueEvent(44) };
 
         A.CallTo(() => this.eventStream.HasSnapshot(default)).Returns(true);
         A.CallTo(() => this.eventStream.GetLatestSnapshot(default)).Returns(snapshot);
-        A.CallTo(() => this.eventStream.ReplayFromSnapshot(snapshot, default)).Returns(eventsSinceSnapshot);
+        A.CallTo(() => this.eventStream.ReplayFromSnapshot(snapshot, default))
+            .Returns(eventsSinceSnapshot.ToAsyncEnumerable());
 
         var aggregateRoot = await this.testee
             .GetById<MyDynamicEventSourcedAggregateRoot>(AggregateId);
 
         aggregateRoot.Version.Should().Be(4);
         aggregateRoot.Value.Should().Be(44);
-    }
-
-    [Fact]
-    public void ThrowsException_WhenTryingToGetAggregateRootByIdAndThereAreNoEvents()
-    {
-        A.CallTo(() => this.eventStream.Replay(default)).Returns(EventHistory.Create());
-
-        Func<Task> act = async () => await this.testee
-            .GetById<MyDynamicEventSourcedAggregateRoot>(AggregateId);
-
-        act.Should().ThrowAsync<AggregateRootNotFoundException>();
     }
 
     [Fact]

@@ -9,14 +9,15 @@ internal class InMemoryEventStream<TAggregateRoot> : EventStream<TAggregateRoot>
     internal InMemoryEventStream(
         string aggregateId,
         IList<EventDescriptor> eventDescriptors,
-        IList<SnapshotDescriptor> snapshotDescriptors) : base(aggregateId)
+        IList<SnapshotDescriptor> snapshotDescriptors
+    )
+        : base(aggregateId)
     {
         this.eventDescriptors = eventDescriptors;
         this.snapshotDescriptors = snapshotDescriptors;
     }
 
-    public override Task<IEventStream> Open(CancellationToken cancellationToken)
-        => Task.FromResult((IEventStream)this);
+    public override Task<IEventStream> Open(CancellationToken cancellationToken) => Task.FromResult<IEventStream>(this);
 
     public override Task SaveSnapshot(ISnapshot snapshot, CancellationToken cancellationToken)
     {
@@ -27,35 +28,43 @@ internal class InMemoryEventStream<TAggregateRoot> : EventStream<TAggregateRoot>
     public override Task<bool> HasSnapshot(CancellationToken cancellationToken)
     {
         var hasSnapshot = this.snapshotDescriptors.Any(s =>
-            s.AggregateType == this.AggregateType && s.AggregateId == this.AggregateId);
+            s.AggregateType == this.AggregateType && s.AggregateId == this.AggregateId
+        );
         return Task.FromResult(hasSnapshot);
     }
 
     public override Task<ISnapshot> GetLatestSnapshot(CancellationToken cancellationToken)
     {
-        var latestSnapshot = this.snapshotDescriptors
-            .Last(s => s.AggregateType == this.AggregateType && s.AggregateId == this.AggregateId).Snapshot;
+        var latestSnapshot = this
+            .snapshotDescriptors.Last(s => s.AggregateType == this.AggregateType && s.AggregateId == this.AggregateId)
+            .Snapshot;
         return Task.FromResult(latestSnapshot);
     }
 
     protected override Task Save(
         VersionableEvent @event,
         IDictionary<string, object> headers,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken
+    )
     {
         this.eventDescriptors.Add(EventDescriptor.From<TAggregateRoot>(this.AggregateId, @event, headers));
         return Task.CompletedTask;
     }
 
-    protected override Task<EventHistory> Replay(int fromVersion, int toVersion, CancellationToken cancellationToken)
+    protected override async Task<IAsyncEnumerable<IEvent>> Replay(int fromVersion, CancellationToken cancellationToken)
     {
-        var events = this.eventDescriptors
-            .Where(e => e.AggregateType == this.AggregateType && e.AggregateId == this.AggregateId)
-            .Where(e => e.Version > fromVersion && e.Version <= toVersion)
-            .OrderBy(e => e.Version)
-            .Select(e => e.Event)
-            .ToList();
+        var events = await this.Replay(fromVersion);
+        return events.ToAsyncEnumerable();
+    }
 
-        return Task.FromResult(new EventHistory(events));
+    private Task<IEnumerable<IEvent>> Replay(int fromVersion)
+    {
+        var events = this
+            .eventDescriptors.Where(e => e.AggregateType == this.AggregateType && e.AggregateId == this.AggregateId)
+            .Where(e => e.Version >= fromVersion)
+            .OrderBy(e => e.Version)
+            .Select(e => e.Event);
+
+        return Task.FromResult(events);
     }
 }

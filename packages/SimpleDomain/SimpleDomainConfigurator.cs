@@ -5,7 +5,7 @@ using EventStore.Persistence;
 using Microsoft.Extensions.DependencyInjection;
 
 /// <summary>
-/// The simple domain configurator.
+/// The SimpleDomain configurator.
 /// </summary>
 /// <param name="collection">Dependency injection for <see cref="IServiceCollection" />.</param>
 internal class SimpleDomainConfigurator(IServiceCollection collection)
@@ -71,18 +71,17 @@ internal class SimpleDomainConfigurator(IServiceCollection collection)
                 : typedValue;
 
     /// <summary>
-    /// Completes the configuration by adding the <see cref="IHaveEventStoreConfiguration" />
+    /// Completes the configuration by adding <see cref="IHaveEventStoreConfiguration" />
     /// to the dependency injection container.
     /// </summary>
     public void Complete() => collection.AddSingleton<IHaveEventStoreConfiguration>(this);
 
-    /// <inheritdoc />
-    public void AddSingleton<TService, TImplementation>()
+    protected void AddSingleton<TService, TImplementation>()
         where TService : class
         where TImplementation : class, TService =>
         collection.AddSingleton<TService, TImplementation>();
 
-    public void AddInstance<TService>(TService instance)
+    protected void AddInstance<TService>(TService instance)
         where TService : class =>
         collection.AddSingleton(instance);
 }

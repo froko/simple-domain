@@ -4,7 +4,8 @@
 /// The abstract base class of an event stream.
 /// </summary>
 /// <typeparam name="TAggregateRoot">The type of the aggregate root.</typeparam>
-public abstract class EventStream<TAggregateRoot> : IEventStream where TAggregateRoot : EventSourcedAggregateRoot
+public abstract class EventStream<TAggregateRoot> : IEventStream
+    where TAggregateRoot : EventSourcedAggregateRoot
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="EventStream{TAggregateRoot}" /> class.
@@ -34,23 +35,25 @@ public abstract class EventStream<TAggregateRoot> : IEventStream where TAggregat
         IReadOnlyCollection<VersionableEvent> events,
         int expectedVersion,
         IDictionary<string, object> headers,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken
+    )
     {
         var originalVersion = expectedVersion - events.Count;
         this.CheckForConcurrencyProblems(originalVersion);
-        foreach (var @event in events) await this.Save(@event, headers, cancellationToken);
+        foreach (var @event in events)
+            await this.Save(@event, headers, cancellationToken);
     }
 
     /// <inheritdoc />
     public abstract Task SaveSnapshot(ISnapshot snapshot, CancellationToken cancellationToken);
 
     /// <inheritdoc />
-    public Task<EventHistory> Replay(CancellationToken cancellationToken)
-        => this.Replay(-1, int.MaxValue, cancellationToken);
+    public Task<IAsyncEnumerable<IEvent>> Replay(CancellationToken cancellationToken) =>
+        this.Replay(0, cancellationToken);
 
     /// <inheritdoc />
-    public Task<EventHistory> ReplayFromSnapshot(ISnapshot snapshot, CancellationToken cancellationToken)
-        => this.Replay(snapshot.Version, int.MaxValue, cancellationToken);
+    public Task<IAsyncEnumerable<IEvent>> ReplayFromSnapshot(ISnapshot snapshot, CancellationToken cancellationToken) =>
+        this.Replay(snapshot.Version + 1, cancellationToken);
 
     /// <inheritdoc />
     public abstract Task<bool> HasSnapshot(CancellationToken cancellationToken);
@@ -74,16 +77,16 @@ public abstract class EventStream<TAggregateRoot> : IEventStream where TAggregat
     protected abstract Task Save(
         VersionableEvent @event,
         IDictionary<string, object> headers,
-        CancellationToken cancellationToken);
+        CancellationToken cancellationToken
+    );
 
     /// <summary>
     /// Replays all events of an aggregate root between two given version boundaries.
     /// </summary>
-    /// <param name="fromVersion">The lower version boundary (exclusive).</param>
-    /// <param name="toVersion">The upper version boundary (inclusive).</param>
+    /// <param name="fromVersion">The lower version boundary (inclusive).</param>
     /// <param name="cancellationToken">The token to monitor for cancellation requests.</param>
-    /// <returns>An event history representing a list of events.</returns>
-    protected abstract Task<EventHistory> Replay(int fromVersion, int toVersion, CancellationToken cancellationToken);
+    /// <returns>An async stream of events.</returns>
+    protected abstract Task<IAsyncEnumerable<IEvent>> Replay(int fromVersion, CancellationToken cancellationToken);
 
     /// <summary>
     /// When overridden, checks for concurrency problems
@@ -93,7 +96,11 @@ public abstract class EventStream<TAggregateRoot> : IEventStream where TAggregat
     /// The original version, calculated as expected version minus the number of events that are
     /// going to be persisted.
     /// </param>
-    protected virtual void CheckForConcurrencyProblems(int originalVersion) { }
+    protected virtual void CheckForConcurrencyProblems(int originalVersion)
+    {
+    }
 
-    protected virtual void Dispose(bool disposing) { }
+    protected virtual void Dispose(bool disposing)
+    {
+    }
 }
