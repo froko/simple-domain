@@ -8,7 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 /// The SimpleDomain configurator.
 /// </summary>
 /// <param name="collection">Dependency injection for <see cref="IServiceCollection" />.</param>
-internal class SimpleDomainConfigurator(IServiceCollection collection)
+public class SimpleDomainConfigurator(IServiceCollection collection)
     : IConfigureSimpleDomain, IConfigureEventStore, IHaveEventStoreConfiguration
 {
     private readonly Dictionary<string, object> configurationItems = [];

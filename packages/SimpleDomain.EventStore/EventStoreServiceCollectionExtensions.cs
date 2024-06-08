@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 /// <summary>
 /// Some extensions for <see cref="IServiceCollection" />.
 /// </summary>
-public static class ServiceCollectionExtensions
+public static class EventStoreServiceCollectionExtensions
 {
     /// <summary>
     /// Adds SimpleDomain assets to the dependency injection container.
@@ -15,9 +15,9 @@ public static class ServiceCollectionExtensions
     /// <returns>The service collection itself since this is a builder method.</returns>
     public static IServiceCollection AddSimpleDomain(
         this IServiceCollection serviceCollection,
-        Action<IConfigureSimpleDomain> configure)
+        Action<IConfigureSimpleDomainWithEventStore> configure)
     {
-        var configurator = new SimpleDomainConfigurator(serviceCollection);
+        var configurator = new SimpleDomainEventStoreConfigurator(serviceCollection);
         configure.Invoke(configurator);
         configurator.Complete();
         return serviceCollection;

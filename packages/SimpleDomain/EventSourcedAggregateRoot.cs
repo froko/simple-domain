@@ -32,9 +32,7 @@ public abstract class EventSourcedAggregateRoot : AggregateRoot, INeedVersion
     /// Builds up the aggregate root from a snapshot.
     /// </summary>
     /// <param name="snapshot"></param>
-    public virtual void LoadFromSnapshot(ISnapshot snapshot)
-    {
-    }
+    public virtual void LoadFromSnapshot(ISnapshot snapshot) { }
 
     /// <summary>
     /// Builds up the aggregate root from a list of events.

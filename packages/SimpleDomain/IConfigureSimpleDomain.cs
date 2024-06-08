@@ -2,6 +2,9 @@
 
 using EventStore;
 
+/// <summary>
+/// The SimpleDomain configuration interface.
+/// </summary>
 public interface IConfigureSimpleDomain
 {
     /// <summary>
