@@ -32,7 +32,7 @@ package
 *.DotSettings.user
 
 # Tooling
-.nx/cache
+.nx
 .eslintcache
 docs/.astro
 
