@@ -3,9 +3,9 @@
 /// <summary>
 /// The EventStore repository.
 /// </summary>
-/// <param name="eventStore">Dependency injection for <see cref="IEventStore"/>.</param>
-/// <param name="configuration">Dependency injection for <see cref="IHaveEventStoreConfiguration"/>.</param>
-internal class EventStoreRepository(IEventStore eventStore, IHaveEventStoreConfiguration configuration)
+/// <param name="eventStore">Dependency injection for <see cref="IEventStore" />.</param>
+/// <param name="configuration">Dependency injection for <see cref="IHaveEventStoreConfiguration" />.</param>
+public class EventStoreRepository(IEventStore eventStore, IHaveEventStoreConfiguration configuration)
     : IEventSourcedRepository
 {
     /// <inheritdoc />

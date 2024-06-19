@@ -96,11 +96,7 @@ public abstract class EventStream<TAggregateRoot> : IEventStream
     /// The original version, calculated as expected version minus the number of events that are
     /// going to be persisted.
     /// </param>
-    protected virtual void CheckForConcurrencyProblems(int originalVersion)
-    {
-    }
+    protected virtual void CheckForConcurrencyProblems(int originalVersion) { }
 
-    protected virtual void Dispose(bool disposing)
-    {
-    }
+    protected virtual void Dispose(bool disposing) { }
 }

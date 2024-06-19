@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDomain.TestDoubles", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDomain.TestHarness", "SimpleDomain.TestHarness\SimpleDomain.TestHarness.csproj", "{DB5CD14B-1B83-4014-A725-C1AC28E67333}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDomain.EventStore", "SimpleDomain.EventStore\SimpleDomain.EventStore.csproj", "{C91301B0-673D-4FF6-AD57-B01099BD6ECD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDomain.EventStore.Facts", "SimpleDomain.EventStore.Facts\SimpleDomain.EventStore.Facts.csproj", "{EB3B5927-8CEB-4158-BE2F-437BED82E2E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +40,13 @@ Global
 		{DB5CD14B-1B83-4014-A725-C1AC28E67333}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB5CD14B-1B83-4014-A725-C1AC28E67333}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB5CD14B-1B83-4014-A725-C1AC28E67333}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C91301B0-673D-4FF6-AD57-B01099BD6ECD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C91301B0-673D-4FF6-AD57-B01099BD6ECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C91301B0-673D-4FF6-AD57-B01099BD6ECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C91301B0-673D-4FF6-AD57-B01099BD6ECD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB3B5927-8CEB-4158-BE2F-437BED82E2E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB3B5927-8CEB-4158-BE2F-437BED82E2E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB3B5927-8CEB-4158-BE2F-437BED82E2E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB3B5927-8CEB-4158-BE2F-437BED82E2E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
