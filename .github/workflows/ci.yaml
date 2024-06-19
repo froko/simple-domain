@@ -74,7 +74,9 @@ jobs:
           reporttypes: 'Cobertura'
 
       - name: Publish Test Results
+        id: testResults
         if: ${{ hashFiles('dist/test-results/') != '' }}
+        continue-on-error: true
         uses: bibipkins/dotnet-test-reporter@v1.4.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -83,3 +85,7 @@ jobs:
           coverage-path: ./dist/test-results/coverage/Cobertura.xml
           coverage-type: cobertura
           coverage-threshold: 80
+
+      - name: Run all tasks
+        if: steps.testResults.outcome == 'failure'
+        run: pnpm all
