@@ -62,8 +62,8 @@ jobs:
       - name: Find Git SHAs for affected tasks
         uses: nrwl/nx-set-shas@v4
 
-      - name: Run affected tasks
-        run: pnpm affected
+      - name: Run all tasks
+        run: pnpm all
 
       - name: Create coverage report
         if: ${{ hashFiles('dist/test-results/') != '' }}
@@ -85,7 +85,3 @@ jobs:
           coverage-path: ./dist/test-results/coverage/Cobertura.xml
           coverage-type: cobertura
           coverage-threshold: 80
-
-      - name: Run all tasks
-        if: steps.testResults.outcome == 'failure'
-        run: pnpm all
