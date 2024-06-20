@@ -13,16 +13,16 @@ importers:
         version: 1.4.0
       '@nx-dotnet/core':
         specifier: ^2.2.0
-        version: 2.2.0(@nx/js@19.3.0(@babel/traverse@7.24.7)(@types/node@20.12.10)(nx@19.3.0)(typescript@5.4.5))(nx@19.3.0)(prettier@3.3.2)
+        version: 2.2.0(@nx/js@19.3.0(@babel/traverse@7.24.7)(@types/node@20.12.10)(nx@19.3.0)(typescript@5.5.2))(nx@19.3.0)(prettier@3.3.2)
       '@nx/js':
         specifier: 19.3.0
-        version: 19.3.0(@babel/traverse@7.24.7)(@types/node@20.12.10)(nx@19.3.0)(typescript@5.4.5)
+        version: 19.3.0(@babel/traverse@7.24.7)(@types/node@20.12.10)(nx@19.3.0)(typescript@5.5.2)
       '@semantic-release/changelog':
         specifier: ^6.0.3
-        version: 6.0.3(semantic-release@24.0.0(typescript@5.4.5))
+        version: 6.0.3(semantic-release@24.0.0(typescript@5.5.2))
       '@semantic-release/git':
         specifier: ^10.0.1
-        version: 10.0.1(semantic-release@24.0.0(typescript@5.4.5))
+        version: 10.0.1(semantic-release@24.0.0(typescript@5.5.2))
       nx:
         specifier: ^19.1.1
         version: 19.3.0
@@ -31,7 +31,7 @@ importers:
         version: 3.3.2
       semantic-release:
         specifier: ^24.0.0
-        version: 24.0.0(typescript@5.4.5)
+        version: 24.0.0(typescript@5.5.2)
 
   docs:
     dependencies:
@@ -40,19 +40,19 @@ importers:
         version: 1.0.2
       '@astrojs/check':
         specifier: ^0.7.0
-        version: 0.7.0(prettier-plugin-astro@0.14.0)(prettier@3.3.2)(typescript@5.4.5)
+        version: 0.7.0(prettier-plugin-astro@0.14.0)(prettier@3.3.2)(typescript@5.5.2)
       '@astrojs/starlight':
         specifier: ^0.24.0
-        version: 0.24.3(astro@4.11.0(@types/node@20.12.10)(typescript@5.4.5))
+        version: 0.24.3(astro@4.11.0(@types/node@20.12.10)(typescript@5.5.2))
       astro:
         specifier: ^4.9.2
-        version: 4.11.0(@types/node@20.12.10)(typescript@5.4.5)
+        version: 4.11.0(@types/node@20.12.10)(typescript@5.5.2)
       sharp:
         specifier: ^0.33.4
         version: 0.33.4
       typescript:
         specifier: ^5.4.5
-        version: 5.4.5
+        version: 5.5.2
     devDependencies:
       prettier-plugin-astro:
         specifier: ^0.14.0
@@ -4293,8 +4293,8 @@ packages:
   typescript-auto-import-cache@0.3.2:
     resolution: {integrity: sha512-+laqe5SFL1vN62FPOOJSUDTZxtgsoOXjneYOXIpx5rQ4UMiN89NAtJLpqLqyebv9fgQ/IMeeTX+mQyRnwvJzvg==}
 
-  typescript@5.4.5:
-    resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
+  typescript@5.5.2:
+    resolution: {integrity: sha512-NcRtPEOsPFFWjobJEtfihkLCZCXZt/os3zf8nTxjVH3RvTSxjrCamJpbExGvYOF+tFHc3pA65qpdwPbzjohhew==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -4695,13 +4695,13 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
 
-  '@astrojs/check@0.7.0(prettier-plugin-astro@0.14.0)(prettier@3.3.2)(typescript@5.4.5)':
+  '@astrojs/check@0.7.0(prettier-plugin-astro@0.14.0)(prettier@3.3.2)(typescript@5.5.2)':
     dependencies:
-      '@astrojs/language-server': 2.10.0(prettier-plugin-astro@0.14.0)(prettier@3.3.2)(typescript@5.4.5)
+      '@astrojs/language-server': 2.10.0(prettier-plugin-astro@0.14.0)(prettier@3.3.2)(typescript@5.5.2)
       chokidar: 3.6.0
       fast-glob: 3.3.2
       kleur: 4.1.5
-      typescript: 5.4.5
+      typescript: 5.5.2
       yargs: 17.7.2
     transitivePeerDependencies:
       - prettier
@@ -4713,11 +4713,11 @@ snapshots:
 
   '@astrojs/internal-helpers@0.4.0': {}
 
-  '@astrojs/language-server@2.10.0(prettier-plugin-astro@0.14.0)(prettier@3.3.2)(typescript@5.4.5)':
+  '@astrojs/language-server@2.10.0(prettier-plugin-astro@0.14.0)(prettier@3.3.2)(typescript@5.5.2)':
     dependencies:
       '@astrojs/compiler': 2.8.0
       '@jridgewell/sourcemap-codec': 1.4.15
-      '@volar/kit': 2.2.5(typescript@5.4.5)
+      '@volar/kit': 2.2.5(typescript@5.5.2)
       '@volar/language-core': 2.2.5
       '@volar/language-server': 2.2.5
       '@volar/language-service': 2.2.5
@@ -4760,12 +4760,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@3.1.1(astro@4.11.0(@types/node@20.12.10)(typescript@5.4.5))':
+  '@astrojs/mdx@3.1.1(astro@4.11.0(@types/node@20.12.10)(typescript@5.5.2))':
     dependencies:
       '@astrojs/markdown-remark': 5.1.0
       '@mdx-js/mdx': 3.0.1
       acorn: 8.12.0
-      astro: 4.11.0(@types/node@20.12.10)(typescript@5.4.5)
+      astro: 4.11.0(@types/node@20.12.10)(typescript@5.5.2)
       es-module-lexer: 1.5.3
       estree-util-visit: 2.0.0
       github-slugger: 2.0.0
@@ -4791,15 +4791,15 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 3.23.8
 
-  '@astrojs/starlight@0.24.3(astro@4.11.0(@types/node@20.12.10)(typescript@5.4.5))':
+  '@astrojs/starlight@0.24.3(astro@4.11.0(@types/node@20.12.10)(typescript@5.5.2))':
     dependencies:
-      '@astrojs/mdx': 3.1.1(astro@4.11.0(@types/node@20.12.10)(typescript@5.4.5))
+      '@astrojs/mdx': 3.1.1(astro@4.11.0(@types/node@20.12.10)(typescript@5.5.2))
       '@astrojs/sitemap': 3.1.6
       '@pagefind/default-ui': 1.1.0
       '@types/hast': 3.0.4
       '@types/mdast': 4.0.4
-      astro: 4.11.0(@types/node@20.12.10)(typescript@5.4.5)
-      astro-expressive-code: 0.35.3(astro@4.11.0(@types/node@20.12.10)(typescript@5.4.5))
+      astro: 4.11.0(@types/node@20.12.10)(typescript@5.5.2)
+      astro-expressive-code: 0.35.3(astro@4.11.0(@types/node@20.12.10)(typescript@5.5.2))
       bcp-47: 2.1.0
       hast-util-from-html: 2.0.1
       hast-util-select: 6.0.2
@@ -5915,9 +5915,9 @@ snapshots:
     transitivePeerDependencies:
       - nx
 
-  '@nrwl/js@19.3.0(@babel/traverse@7.24.7)(@types/node@20.12.10)(nx@19.3.0)(typescript@5.4.5)':
+  '@nrwl/js@19.3.0(@babel/traverse@7.24.7)(@types/node@20.12.10)(nx@19.3.0)(typescript@5.5.2)':
     dependencies:
-      '@nx/js': 19.3.0(@babel/traverse@7.24.7)(@types/node@20.12.10)(nx@19.3.0)(typescript@5.4.5)
+      '@nx/js': 19.3.0(@babel/traverse@7.24.7)(@types/node@20.12.10)(nx@19.3.0)(typescript@5.5.2)
     transitivePeerDependencies:
       - '@babel/traverse'
       - '@swc-node/register'
@@ -5947,7 +5947,7 @@ snapshots:
       - '@swc/core'
       - debug
 
-  '@nx-dotnet/core@2.2.0(@nx/js@19.3.0(@babel/traverse@7.24.7)(@types/node@20.12.10)(nx@19.3.0)(typescript@5.4.5))(nx@19.3.0)(prettier@3.3.2)':
+  '@nx-dotnet/core@2.2.0(@nx/js@19.3.0(@babel/traverse@7.24.7)(@types/node@20.12.10)(nx@19.3.0)(typescript@5.5.2))(nx@19.3.0)(prettier@3.3.2)':
     dependencies:
       '@nx-dotnet/dotnet': 2.2.0(nx@19.3.0)
       '@nx-dotnet/utils': 2.2.0(nx@19.3.0)
@@ -5960,7 +5960,7 @@ snapshots:
       xmldoc: 1.3.0
       yargs-parser: 21.1.1
     optionalDependencies:
-      '@nx/js': 19.3.0(@babel/traverse@7.24.7)(@types/node@20.12.10)(nx@19.3.0)(typescript@5.4.5)
+      '@nx/js': 19.3.0(@babel/traverse@7.24.7)(@types/node@20.12.10)(nx@19.3.0)(typescript@5.5.2)
       prettier: 3.3.2
     transitivePeerDependencies:
       - nx
@@ -6008,7 +6008,7 @@ snapshots:
       tslib: 2.6.3
       yargs-parser: 21.1.1
 
-  '@nx/js@19.3.0(@babel/traverse@7.24.7)(@types/node@20.12.10)(nx@19.3.0)(typescript@5.4.5)':
+  '@nx/js@19.3.0(@babel/traverse@7.24.7)(@types/node@20.12.10)(nx@19.3.0)(typescript@5.5.2)':
     dependencies:
       '@babel/core': 7.24.7
       '@babel/plugin-proposal-decorators': 7.24.6(@babel/core@7.24.7)
@@ -6017,7 +6017,7 @@ snapshots:
       '@babel/preset-env': 7.24.6(@babel/core@7.24.7)
       '@babel/preset-typescript': 7.24.6(@babel/core@7.24.7)
       '@babel/runtime': 7.24.6
-      '@nrwl/js': 19.3.0(@babel/traverse@7.24.7)(@types/node@20.12.10)(nx@19.3.0)(typescript@5.4.5)
+      '@nrwl/js': 19.3.0(@babel/traverse@7.24.7)(@types/node@20.12.10)(nx@19.3.0)(typescript@5.5.2)
       '@nx/devkit': 19.3.0(nx@19.3.0)
       '@nx/workspace': 19.3.0
       babel-plugin-const-enum: 1.2.0(@babel/core@7.24.7)
@@ -6036,7 +6036,7 @@ snapshots:
       ora: 5.3.0
       semver: 7.6.2
       source-map-support: 0.5.19
-      ts-node: 10.9.1(@types/node@20.12.10)(typescript@5.4.5)
+      ts-node: 10.9.1(@types/node@20.12.10)(typescript@5.5.2)
       tsconfig-paths: 4.2.0
       tslib: 2.6.3
     transitivePeerDependencies:
@@ -6231,15 +6231,15 @@ snapshots:
 
   '@sec-ant/readable-stream@0.4.1': {}
 
-  '@semantic-release/changelog@6.0.3(semantic-release@24.0.0(typescript@5.4.5))':
+  '@semantic-release/changelog@6.0.3(semantic-release@24.0.0(typescript@5.5.2))':
     dependencies:
       '@semantic-release/error': 3.0.0
       aggregate-error: 3.1.0
       fs-extra: 11.2.0
       lodash: 4.17.21
-      semantic-release: 24.0.0(typescript@5.4.5)
+      semantic-release: 24.0.0(typescript@5.5.2)
 
-  '@semantic-release/commit-analyzer@13.0.0(semantic-release@24.0.0(typescript@5.4.5))':
+  '@semantic-release/commit-analyzer@13.0.0(semantic-release@24.0.0(typescript@5.5.2))':
     dependencies:
       conventional-changelog-angular: 8.0.0
       conventional-changelog-writer: 8.0.0
@@ -6249,7 +6249,7 @@ snapshots:
       import-from-esm: 1.3.4
       lodash-es: 4.17.21
       micromatch: 4.0.7
-      semantic-release: 24.0.0(typescript@5.4.5)
+      semantic-release: 24.0.0(typescript@5.5.2)
     transitivePeerDependencies:
       - supports-color
 
@@ -6257,7 +6257,7 @@ snapshots:
 
   '@semantic-release/error@4.0.0': {}
 
-  '@semantic-release/git@10.0.1(semantic-release@24.0.0(typescript@5.4.5))':
+  '@semantic-release/git@10.0.1(semantic-release@24.0.0(typescript@5.5.2))':
     dependencies:
       '@semantic-release/error': 3.0.0
       aggregate-error: 3.1.0
@@ -6267,11 +6267,11 @@ snapshots:
       lodash: 4.17.21
       micromatch: 4.0.7
       p-reduce: 2.1.0
-      semantic-release: 24.0.0(typescript@5.4.5)
+      semantic-release: 24.0.0(typescript@5.5.2)
     transitivePeerDependencies:
       - supports-color
 
-  '@semantic-release/github@10.0.5(semantic-release@24.0.0(typescript@5.4.5))':
+  '@semantic-release/github@10.0.5(semantic-release@24.0.0(typescript@5.5.2))':
     dependencies:
       '@octokit/core': 6.1.2
       '@octokit/plugin-paginate-rest': 11.3.0(@octokit/core@6.1.2)
@@ -6288,12 +6288,12 @@ snapshots:
       lodash-es: 4.17.21
       mime: 4.0.3
       p-filter: 4.1.0
-      semantic-release: 24.0.0(typescript@5.4.5)
+      semantic-release: 24.0.0(typescript@5.5.2)
       url-join: 5.0.0
     transitivePeerDependencies:
       - supports-color
 
-  '@semantic-release/npm@12.0.1(semantic-release@24.0.0(typescript@5.4.5))':
+  '@semantic-release/npm@12.0.1(semantic-release@24.0.0(typescript@5.5.2))':
     dependencies:
       '@semantic-release/error': 4.0.0
       aggregate-error: 5.0.0
@@ -6306,11 +6306,11 @@ snapshots:
       rc: 1.2.8
       read-pkg: 9.0.1
       registry-auth-token: 5.0.2
-      semantic-release: 24.0.0(typescript@5.4.5)
+      semantic-release: 24.0.0(typescript@5.5.2)
       semver: 7.6.2
       tempy: 3.1.0
 
-  '@semantic-release/release-notes-generator@14.0.0(semantic-release@24.0.0(typescript@5.4.5))':
+  '@semantic-release/release-notes-generator@14.0.0(semantic-release@24.0.0(typescript@5.5.2))':
     dependencies:
       conventional-changelog-angular: 8.0.0
       conventional-changelog-writer: 8.0.0
@@ -6322,7 +6322,7 @@ snapshots:
       into-stream: 7.0.0
       lodash-es: 4.17.21
       read-pkg-up: 11.0.0
-      semantic-release: 24.0.0(typescript@5.4.5)
+      semantic-release: 24.0.0(typescript@5.5.2)
     transitivePeerDependencies:
       - supports-color
 
@@ -6423,12 +6423,12 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@volar/kit@2.2.5(typescript@5.4.5)':
+  '@volar/kit@2.2.5(typescript@5.5.2)':
     dependencies:
       '@volar/language-service': 2.2.5
       '@volar/typescript': 2.2.5
       typesafe-path: 0.2.2
-      typescript: 5.4.5
+      typescript: 5.5.2
       vscode-languageserver-textdocument: 1.0.11
       vscode-uri: 3.0.8
 
@@ -6593,12 +6593,12 @@ snapshots:
 
   astring@1.8.6: {}
 
-  astro-expressive-code@0.35.3(astro@4.11.0(@types/node@20.12.10)(typescript@5.4.5)):
+  astro-expressive-code@0.35.3(astro@4.11.0(@types/node@20.12.10)(typescript@5.5.2)):
     dependencies:
-      astro: 4.11.0(@types/node@20.12.10)(typescript@5.4.5)
+      astro: 4.11.0(@types/node@20.12.10)(typescript@5.5.2)
       rehype-expressive-code: 0.35.3
 
-  astro@4.11.0(@types/node@20.12.10)(typescript@5.4.5):
+  astro@4.11.0(@types/node@20.12.10)(typescript@5.5.2):
     dependencies:
       '@astrojs/compiler': 2.8.0
       '@astrojs/internal-helpers': 0.4.0
@@ -6654,7 +6654,7 @@ snapshots:
       shiki: 1.7.0
       string-width: 7.1.0
       strip-ansi: 7.1.0
-      tsconfck: 3.1.0(typescript@5.4.5)
+      tsconfck: 3.1.0(typescript@5.5.2)
       unist-util-visit: 5.0.0
       vfile: 6.0.1
       vite: 5.3.1(@types/node@20.12.10)
@@ -7014,14 +7014,14 @@ snapshots:
       path-type: 4.0.0
       yaml: 1.10.2
 
-  cosmiconfig@9.0.0(typescript@5.4.5):
+  cosmiconfig@9.0.0(typescript@5.5.2):
     dependencies:
       env-paths: 2.2.1
       import-fresh: 3.3.0
       js-yaml: 4.1.0
       parse-json: 5.2.0
     optionalDependencies:
-      typescript: 5.4.5
+      typescript: 5.5.2
 
   create-require@1.1.1: {}
 
@@ -9469,15 +9469,15 @@ snapshots:
       extend-shallow: 2.0.1
       kind-of: 6.0.3
 
-  semantic-release@24.0.0(typescript@5.4.5):
+  semantic-release@24.0.0(typescript@5.5.2):
     dependencies:
-      '@semantic-release/commit-analyzer': 13.0.0(semantic-release@24.0.0(typescript@5.4.5))
+      '@semantic-release/commit-analyzer': 13.0.0(semantic-release@24.0.0(typescript@5.5.2))
       '@semantic-release/error': 4.0.0
-      '@semantic-release/github': 10.0.5(semantic-release@24.0.0(typescript@5.4.5))
-      '@semantic-release/npm': 12.0.1(semantic-release@24.0.0(typescript@5.4.5))
-      '@semantic-release/release-notes-generator': 14.0.0(semantic-release@24.0.0(typescript@5.4.5))
+      '@semantic-release/github': 10.0.5(semantic-release@24.0.0(typescript@5.5.2))
+      '@semantic-release/npm': 12.0.1(semantic-release@24.0.0(typescript@5.5.2))
+      '@semantic-release/release-notes-generator': 14.0.0(semantic-release@24.0.0(typescript@5.5.2))
       aggregate-error: 5.0.0
-      cosmiconfig: 9.0.0(typescript@5.4.5)
+      cosmiconfig: 9.0.0(typescript@5.5.2)
       debug: 4.3.5
       env-ci: 11.0.0
       execa: 9.1.0
@@ -9820,7 +9820,7 @@ snapshots:
 
   trough@2.2.0: {}
 
-  ts-node@10.9.1(@types/node@20.12.10)(typescript@5.4.5):
+  ts-node@10.9.1(@types/node@20.12.10)(typescript@5.5.2):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
@@ -9834,13 +9834,13 @@ snapshots:
       create-require: 1.1.1
       diff: 4.0.2
       make-error: 1.3.6
-      typescript: 5.4.5
+      typescript: 5.5.2
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
 
-  tsconfck@3.1.0(typescript@5.4.5):
+  tsconfck@3.1.0(typescript@5.5.2):
     optionalDependencies:
-      typescript: 5.4.5
+      typescript: 5.5.2
 
   tsconfig-paths@4.2.0:
     dependencies:
@@ -9909,7 +9909,7 @@ snapshots:
     dependencies:
       semver: 7.6.2
 
-  typescript@5.4.5: {}
+  typescript@5.5.2: {}
 
   uglify-js@3.17.4:
     optional: true
