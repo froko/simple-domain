@@ -3,9 +3,9 @@
   "type": "module",
   "scripts": {
     "format": "prettier --write .",
-    "dev": "astro dev --open",
+    "dev": "astro dev",
     "build": "astro check && astro build",
-    "preview": "astro preview --open",
+    "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
