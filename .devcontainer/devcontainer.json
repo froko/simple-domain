@@ -1,7 +1,10 @@
 {
   "image": "mcr.microsoft.com/devcontainers/base:debian",
   "features": {
+    "ghcr.io/devcontainers/features/dotnet:2": {},
+    "ghcr.io/devcontainers/features/node:1": {},
     "ghcr.io/devcontainers/features/nix:1": {}
   },
+  "postCreateCommand": "bash ./.devcontainer/postCreateCommand.sh",
   "forwardPorts": [4211, 4321]
 }
