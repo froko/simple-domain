@@ -6,7 +6,7 @@ This Getting Started guide is built around a Giftcard sample application as it i
 concepts using a (near) real-world example.
 
 What you'll find here is a straight-forward step-by-step guide to get you started with SimpleDomain.
-It is not a comprehensive guide. For more detailed information, please refer to the [Documentation](/documentation).
+It is not a comprehensive guide. For more detailed information, please refer to the [Documentation](/simple-domain/documentation).
 
 ## Prerequisites
 
@@ -185,7 +185,7 @@ public static Giftcard Create(int cardNumber, DateTime validUntil, decimal initi
 
 The static `Guard` class is a helper class provided by `SimpleDomain` to add preconditions to the code. If a precondition
 fails, an Exception is thrown, which needs to be caught by the caller. We will use other methods of the `Guard` class
-later in this guide. A documentation can be found [here](/documentation/guard).
+later in this guide. A documentation can be found [here](/simple-domain/documentation/guard).
 
 ### Add remaining transitions and business rules
 
