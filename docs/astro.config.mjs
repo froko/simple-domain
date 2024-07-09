@@ -20,8 +20,12 @@ export default defineConfig({
           link: 'getting-started'
         },
         {
+          label: 'Documentation',
+          autogenerate: { directory: 'documentation' }
+        },
+        {
           label: 'References',
-          autogenerate: { directory: 'references' }
+          link: 'references'
         }
       ]
     })
