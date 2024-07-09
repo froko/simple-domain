@@ -5,6 +5,8 @@ import simplePlantUML from '@akebifiky/remark-simple-plantuml';
 // https://astro.build/config
 export default defineConfig({
   outDir: '../dist/docs',
+  site: 'https://simple-domain.github.io',
+  base: 'simple-domain/docs',
   markdown: {
     remarkPlugins: [simplePlantUML]
   },
