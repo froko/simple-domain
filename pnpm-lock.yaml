@@ -13,7 +13,7 @@ importers:
         version: 1.4.0
       '@nx-dotnet/core':
         specifier: ^2.2.0
-        version: 2.2.0(@nx/js@19.5.4(@babel/traverse@7.24.8)(@types/node@20.12.10)(nx@19.5.4)(typescript@5.5.4))(nx@19.5.4)(prettier@3.3.3)
+        version: 2.4.2(@nx/js@19.5.4(@babel/traverse@7.24.8)(@types/node@20.12.10)(nx@19.5.4)(typescript@5.5.4))(nx@19.5.4)(prettier@3.3.3)
       '@nx/js':
         specifier: 19.5.4
         version: 19.5.4(@babel/traverse@7.24.8)(@types/node@20.12.10)(nx@19.5.4)(typescript@5.5.4)
@@ -1092,8 +1092,8 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@nrwl/devkit@17.0.2':
-    resolution: {integrity: sha512-zgqTFYmvs80D3T/TwmR/EBdV1OU2c96YYHngAe3DX8kXhjlV3dq+VPZVBROM0AzYLGaSckW3mHBhgL+JrDp5Pg==}
+  '@nrwl/devkit@19.5.3':
+    resolution: {integrity: sha512-kd6eIQjWuFHdO14wVu0rzGtoPbO3EdYM/3gATOupxBzlqD+7dmkvv1Olbri9v598mDApXQNo8q81L2masTAhvg==}
 
   '@nrwl/devkit@19.5.4':
     resolution: {integrity: sha512-T3cRQErKfEyrx9x+xsnY4kg5+vmwPn3UQY1GwsPuuhqYeJn2NAQFzb8gcnZ6mSTqughum3eqp2nNDmpUkWO7tg==}
@@ -1108,33 +1108,34 @@ packages:
   '@nrwl/workspace@19.5.4':
     resolution: {integrity: sha512-0vrhaotIhuNbP5qeKBC0xC9sEZfpPfUG27lf/mVWdkRCreJXFrIJL+R74care9gnDr9ZFR8a1LalYB1JuG5QWA==}
 
-  '@nx-dotnet/core@2.2.0':
-    resolution: {integrity: sha512-UtJSUKPLsfUIW2G0q04Ajuum6oCHYyIjNaFX87In+dxaczYBNpEXiq83ptfAtO2BIWhVB46XD5p7TM9eLYMDGw==}
+  '@nx-dotnet/core@2.4.2':
+    resolution: {integrity: sha512-J7+GzeiYgAIXObmkEX2/4fpaYHJc3mXePfFcdN/DS2vu2dJ1dJjQyTgYkfTTkbQiUazOGG4lsa98o9WJLPDGQQ==}
     peerDependencies:
       '@nx/js': '>=16.0.0-beta.1'
-      '@trumbitta/nx-plugin-openapi': ^1.12.1
+      '@openapitools/openapi-generator-cli': 2.13.4
       eslint: '>8.0.0'
+      nx: '>=18.0.0 <20.0.0'
       prettier: '>=2.0.0'
     peerDependenciesMeta:
       '@nx/js':
         optional: true
-      '@trumbitta/nx-plugin-openapi':
+      '@openapitools/openapi-generator-cli':
         optional: true
       eslint:
         optional: true
       prettier:
         optional: true
 
-  '@nx-dotnet/dotnet@2.2.0':
-    resolution: {integrity: sha512-g29sppjsvDc9f5nO/kU19Laa8PYAUN8rMO4mf6uXugPocTXOEWHZWPBa2TdsW+R3U/6zTEEGp+Nay9EDT/H35w==}
+  '@nx-dotnet/dotnet@2.4.2':
+    resolution: {integrity: sha512-eagK4NZ/pNQWdA/igCVtD4RKD9x6YPKiq5GwjIfSFgYy+Ua06qfSnunZm7oypUDONdXEyR2jmAf6MYkrF4hBrQ==}
 
-  '@nx-dotnet/utils@2.2.0':
-    resolution: {integrity: sha512-R3hAAmvqXEqY39h7bXKNv2V8GBZalAH8DM+r489pLxRWC78PY7N/LUBtTUOTx0zu+qmpq7ouUWeVup+ttKO8lA==}
+  '@nx-dotnet/utils@2.4.2':
+    resolution: {integrity: sha512-wTzngB09VjzVHr3wZKQ00WP32e+Dzpy9clGXUqLd68NM5GuxIurAsanZ2CIaf04iwlotMqPzLZsyqudTASpEZA==}
 
-  '@nx/devkit@17.0.2':
-    resolution: {integrity: sha512-gtJNrFtGZa96qAM4ijAvoCLj/LuUr+Jq91QITsYE4cvYL0qan4zGcAOBMclzpaXVN9pwpko+veDwHwnmp/SXTg==}
+  '@nx/devkit@19.5.3':
+    resolution: {integrity: sha512-OUi8OJkoT+y3LwXACO6ugF9l6QppUyHrBIZYOTffBa1ZrnkpJrw03smy+GhAt+BDoeNGEuOPHGvOSV4AmRxnmg==}
     peerDependencies:
-      nx: '>= 16 <= 18'
+      nx: '>= 17 <= 20'
 
   '@nx/devkit@19.5.4':
     resolution: {integrity: sha512-0TG2iU0xVRuElLP2aLeRSKUynsC+UgHqE/FJW2IcglHngs2/Duw2A4HDUVVOxztkEQPmp736qkYSwFO0nlOGxg==}
@@ -3694,11 +3695,6 @@ packages:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
     hasBin: true
 
-  semver@7.5.3:
-    resolution: {integrity: sha512-QBlUtyVk/5EeHbi7X0fw6liDZc7BBmEaSYn01fMU1OUYbf6GPsbTtd8WmnqbI20SeycoHSeiybkE/q1Q+qlThQ==}
-    engines: {node: '>=10'}
-    hasBin: true
-
   semver@7.5.4:
     resolution: {integrity: sha512-1bCSESV6Pv+i21Hvpxp3Dx+pSD8lIPt8uVjRrxAUt/nbswYc+tK6Y2btiULjd4+fnq15PX+nqQDC7Oft7WkwcA==}
     engines: {node: '>=10'}
@@ -5621,9 +5617,9 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
 
-  '@nrwl/devkit@17.0.2(nx@19.5.4)':
+  '@nrwl/devkit@19.5.3(nx@19.5.4)':
     dependencies:
-      '@nx/devkit': 17.0.2(nx@19.5.4)
+      '@nx/devkit': 19.5.3(nx@19.5.4)
     transitivePeerDependencies:
       - nx
 
@@ -5665,35 +5661,35 @@ snapshots:
       - '@swc/core'
       - debug
 
-  '@nx-dotnet/core@2.2.0(@nx/js@19.5.4(@babel/traverse@7.24.8)(@types/node@20.12.10)(nx@19.5.4)(typescript@5.5.4))(nx@19.5.4)(prettier@3.3.3)':
+  '@nx-dotnet/core@2.4.2(@nx/js@19.5.4(@babel/traverse@7.24.8)(@types/node@20.12.10)(nx@19.5.4)(typescript@5.5.4))(nx@19.5.4)(prettier@3.3.3)':
     dependencies:
-      '@nx-dotnet/dotnet': 2.2.0(nx@19.5.4)
-      '@nx-dotnet/utils': 2.2.0(nx@19.5.4)
-      '@nx/devkit': 17.0.2(nx@19.5.4)
+      '@nx-dotnet/dotnet': 2.4.2(nx@19.5.4)
+      '@nx-dotnet/utils': 2.4.2(nx@19.5.4)
+      '@nx/devkit': 19.5.3(nx@19.5.4)
       fast-glob: 3.2.12
       inquirer: 8.2.6
       minimatch: 3.1.2
+      nx: 19.5.4
       semver: 7.5.4
+      tmp: 0.2.3
       tslib: 2.6.3
       xmldoc: 1.3.0
       yargs-parser: 21.1.1
     optionalDependencies:
       '@nx/js': 19.5.4(@babel/traverse@7.24.8)(@types/node@20.12.10)(nx@19.5.4)(typescript@5.5.4)
       prettier: 3.3.3
-    transitivePeerDependencies:
-      - nx
 
-  '@nx-dotnet/dotnet@2.2.0(nx@19.5.4)':
+  '@nx-dotnet/dotnet@2.4.2(nx@19.5.4)':
     dependencies:
-      '@nx-dotnet/utils': 2.2.0(nx@19.5.4)
+      '@nx-dotnet/utils': 2.4.2(nx@19.5.4)
       semver: 7.5.4
       tslib: 2.6.3
     transitivePeerDependencies:
       - nx
 
-  '@nx-dotnet/utils@2.2.0(nx@19.5.4)':
+  '@nx-dotnet/utils@2.4.2(nx@19.5.4)':
     dependencies:
-      '@nx/devkit': 17.0.2(nx@19.5.4)
+      '@nx/devkit': 19.5.3(nx@19.5.4)
       fast-glob: 3.2.12
       rimraf: 3.0.2
       semver: 7.5.4
@@ -5702,16 +5698,18 @@ snapshots:
     transitivePeerDependencies:
       - nx
 
-  '@nx/devkit@17.0.2(nx@19.5.4)':
+  '@nx/devkit@19.5.3(nx@19.5.4)':
     dependencies:
-      '@nrwl/devkit': 17.0.2(nx@19.5.4)
+      '@nrwl/devkit': 19.5.3(nx@19.5.4)
       ejs: 3.1.10
       enquirer: 2.3.6
       ignore: 5.3.1
+      minimatch: 9.0.3
       nx: 19.5.4
-      semver: 7.5.3
+      semver: 7.5.4
       tmp: 0.2.3
       tslib: 2.6.3
+      yargs-parser: 21.1.1
 
   '@nx/devkit@19.5.4(nx@19.5.4)':
     dependencies:
@@ -8879,10 +8877,6 @@ snapshots:
   semver-regex@4.0.5: {}
 
   semver@6.3.1: {}
-
-  semver@7.5.3:
-    dependencies:
-      lru-cache: 6.0.0
 
   semver@7.5.4:
     dependencies:
