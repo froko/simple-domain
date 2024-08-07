@@ -13,7 +13,7 @@ importers:
         version: 1.4.0
       '@nx-dotnet/core':
         specifier: ^2.2.0
-        version: 2.4.2(@nx/js@19.5.6(@babel/traverse@7.25.3)(@types/node@17.0.45)(nx@19.5.6)(typescript@5.5.4))(nx@19.5.6)(prettier@3.3.3)
+        version: 2.4.3(@nx/js@19.5.6(@babel/traverse@7.25.3)(@types/node@17.0.45)(nx@19.5.6)(typescript@5.5.4))(nx@19.5.6)(prettier@3.3.3)
       '@nx/js':
         specifier: 19.5.6
         version: 19.5.6(@babel/traverse@7.25.3)(@types/node@17.0.45)(nx@19.5.6)(typescript@5.5.4)
@@ -1107,8 +1107,8 @@ packages:
   '@nrwl/workspace@19.5.6':
     resolution: {integrity: sha512-k0Pria840szB3dIDCXOMbD4jbnaLCeGRYthE5duG5nPxTCbeMMu7pU1t0sv9IgpQZ/JrHeWliknWgaTlIguPug==}
 
-  '@nx-dotnet/core@2.4.2':
-    resolution: {integrity: sha512-J7+GzeiYgAIXObmkEX2/4fpaYHJc3mXePfFcdN/DS2vu2dJ1dJjQyTgYkfTTkbQiUazOGG4lsa98o9WJLPDGQQ==}
+  '@nx-dotnet/core@2.4.3':
+    resolution: {integrity: sha512-X/XCkGSTf1nvApM0TSEIW0cPia3nopORnL1KANpZ6Yups5Nzz+6VFuZZHF0SdMz8vKbYWLrvx8BoitqLjEnEiA==}
     peerDependencies:
       '@nx/js': '>=16.0.0-beta.1'
       '@openapitools/openapi-generator-cli': 2.13.4
@@ -1125,11 +1125,11 @@ packages:
       prettier:
         optional: true
 
-  '@nx-dotnet/dotnet@2.4.2':
-    resolution: {integrity: sha512-eagK4NZ/pNQWdA/igCVtD4RKD9x6YPKiq5GwjIfSFgYy+Ua06qfSnunZm7oypUDONdXEyR2jmAf6MYkrF4hBrQ==}
+  '@nx-dotnet/dotnet@2.4.3':
+    resolution: {integrity: sha512-ULd0QjFHZb6ich46LmAE1c5REBPtPCpwD82n024sLhSom6TYYv10SFux8HMgt5FT890fidPbsDWx87g85/uPGQ==}
 
-  '@nx-dotnet/utils@2.4.2':
-    resolution: {integrity: sha512-wTzngB09VjzVHr3wZKQ00WP32e+Dzpy9clGXUqLd68NM5GuxIurAsanZ2CIaf04iwlotMqPzLZsyqudTASpEZA==}
+  '@nx-dotnet/utils@2.4.3':
+    resolution: {integrity: sha512-Xd5VRUioxkaGoUPHJ+EgXxDr198km70/PsAvgIlXcLEoiPJ5SrVboYi8kStnuxZeaZugh+oJUfDFu1cF2PUZ2A==}
 
   '@nx/devkit@19.5.3':
     resolution: {integrity: sha512-OUi8OJkoT+y3LwXACO6ugF9l6QppUyHrBIZYOTffBa1ZrnkpJrw03smy+GhAt+BDoeNGEuOPHGvOSV4AmRxnmg==}
@@ -5642,10 +5642,10 @@ snapshots:
       - '@swc/core'
       - debug
 
-  '@nx-dotnet/core@2.4.2(@nx/js@19.5.6(@babel/traverse@7.25.3)(@types/node@17.0.45)(nx@19.5.6)(typescript@5.5.4))(nx@19.5.6)(prettier@3.3.3)':
+  '@nx-dotnet/core@2.4.3(@nx/js@19.5.6(@babel/traverse@7.25.3)(@types/node@17.0.45)(nx@19.5.6)(typescript@5.5.4))(nx@19.5.6)(prettier@3.3.3)':
     dependencies:
-      '@nx-dotnet/dotnet': 2.4.2(nx@19.5.6)
-      '@nx-dotnet/utils': 2.4.2(nx@19.5.6)
+      '@nx-dotnet/dotnet': 2.4.3(nx@19.5.6)
+      '@nx-dotnet/utils': 2.4.3(nx@19.5.6)
       '@nx/devkit': 19.5.3(nx@19.5.6)
       fast-glob: 3.2.12
       inquirer: 8.2.6
@@ -5660,15 +5660,15 @@ snapshots:
       '@nx/js': 19.5.6(@babel/traverse@7.25.3)(@types/node@17.0.45)(nx@19.5.6)(typescript@5.5.4)
       prettier: 3.3.3
 
-  '@nx-dotnet/dotnet@2.4.2(nx@19.5.6)':
+  '@nx-dotnet/dotnet@2.4.3(nx@19.5.6)':
     dependencies:
-      '@nx-dotnet/utils': 2.4.2(nx@19.5.6)
+      '@nx-dotnet/utils': 2.4.3(nx@19.5.6)
       semver: 7.5.4
       tslib: 2.6.3
     transitivePeerDependencies:
       - nx
 
-  '@nx-dotnet/utils@2.4.2(nx@19.5.6)':
+  '@nx-dotnet/utils@2.4.3(nx@19.5.6)':
     dependencies:
       '@nx/devkit': 19.5.3(nx@19.5.6)
       fast-glob: 3.2.12
