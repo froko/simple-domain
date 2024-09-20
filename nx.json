@@ -1,9 +1,10 @@
 {
   "tasksRunnerOptions": {
     "default": {
-      "runner": "nx/tasks-runners/default",
+      "runner": "nx-cloud",
       "options": {
-        "cacheableOperations": ["format", "lint", "build", "test"]
+        "cacheableOperations": ["format", "lint", "build", "test"],
+        "nxCloudId": "66ed7cda68a2fa5a561c8011"
       }
     }
   },
@@ -15,6 +16,5 @@
       "dependsOn": ["build"]
     }
   },
-  "plugins": ["@nx-dotnet/core"],
-  "nxCloudAccessToken": "N2RmYjNmNjctNzlkZS00ZWFhLTg3MGUtNjljZjg1OWUyN2JmfHJlYWQtd3JpdGU="
+  "plugins": ["@nx-dotnet/core"]
 }
