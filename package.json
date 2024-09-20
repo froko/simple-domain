@@ -1,6 +1,6 @@
 {
   "name": "simple-domain",
-  "version": "0.0.1",
+  "version": "3.0.0",
   "description": "A framework which supports DDD, CQRS and EventSourcing",
   "author": "Patrick Ineichen",
   "repository": {
