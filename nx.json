@@ -3,17 +3,24 @@
     "default": {
       "runner": "nx-cloud",
       "options": {
-        "cacheableOperations": ["format", "lint", "build", "test"],
         "nxCloudId": "66ed7cda68a2fa5a561c8011"
       }
     }
   },
   "targetDefaults": {
+    "format": {
+      "cache": true
+    },
+    "lint": {
+      "cache": true
+    },
     "build": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build"],
+      "cache": true
     },
     "test": {
-      "dependsOn": ["build"]
+      "dependsOn": ["build"],
+      "cache": true
     }
   },
   "plugins": ["@nx-dotnet/core"]
