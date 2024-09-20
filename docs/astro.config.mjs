@@ -10,9 +10,9 @@ export default defineConfig({
   },
   integrations: [
     starlight({
-      title: 'dotnet-monorepo',
+      title: 'SimpleDomain',
       social: {
-        github: 'https://github.com/froko/dotnet-monorepo'
+        github: 'https://github.com/froko/simple-domain'
       },
       sidebar: [
         {

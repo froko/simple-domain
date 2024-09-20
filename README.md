@@ -1,13 +1,6 @@
-# .NET MonoRepo starter project
+# SimpleDomain
 
-A solid starting point for your new Nx based .NET monorepo.
-
-## Get started
-
-1. Clone the repo or run `degit https://github.com/froko/dotnet/monorepo <project-name>` to create a new project
-2. Run `pnpm install`
-3. Create a new .NET project in either the `apps` or `libs` directory
-4. Depending on the project type (production, test), copy the appropriate `project-[type].json` file to the project directory and rename it to `project.json`
+A framework which supports DDD, CQRS & EventSourcing
 
 ## Available commands on the root level
 
