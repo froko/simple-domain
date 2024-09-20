@@ -17,5 +17,6 @@
   <ItemGroup>
     <ProjectReference Include="..\SimpleDomain\SimpleDomain.csproj" />
     <ProjectReference Include="..\SimpleDomain.TestDoubles\SimpleDomain.TestDoubles.csproj" />
+    <ProjectReference Include="..\SimpleDomain.TestHarness\SimpleDomain.TestHarness.csproj" />
   </ItemGroup>
 </Project>
