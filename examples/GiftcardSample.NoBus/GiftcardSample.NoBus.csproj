@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>GiftcardSample</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GiftcardSample\GiftcardSample.csproj" />
+    <ProjectReference Include="..\..\packages\SimpleDomain\SimpleDomain.csproj" />
+  </ItemGroup>
+</Project>
