@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDomain.TestDoubles", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDomain.TestHarness", "SimpleDomain.TestHarness\SimpleDomain.TestHarness.csproj", "{AEA99DF2-22AB-4940-B8A3-6DB7E36E9AF5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDomain.EventStore", "SimpleDomain.EventStore\SimpleDomain.EventStore.csproj", "{4537F73A-78D2-480D-AF51-47F75B8D9782}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDomain.EventStore.Facts", "SimpleDomain.EventStore.Facts\SimpleDomain.EventStore.Facts.csproj", "{F861CAEC-1769-458D-BE6D-C21A36398908}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +40,13 @@ Global
 		{AEA99DF2-22AB-4940-B8A3-6DB7E36E9AF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEA99DF2-22AB-4940-B8A3-6DB7E36E9AF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEA99DF2-22AB-4940-B8A3-6DB7E36E9AF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4537F73A-78D2-480D-AF51-47F75B8D9782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4537F73A-78D2-480D-AF51-47F75B8D9782}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4537F73A-78D2-480D-AF51-47F75B8D9782}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4537F73A-78D2-480D-AF51-47F75B8D9782}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F861CAEC-1769-458D-BE6D-C21A36398908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F861CAEC-1769-458D-BE6D-C21A36398908}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F861CAEC-1769-458D-BE6D-C21A36398908}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F861CAEC-1769-458D-BE6D-C21A36398908}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
