@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>GiftcardSample</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MassTransit" Version="8.2.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GiftcardSample\GiftcardSample.csproj" />
+    <ProjectReference Include="..\..\packages\SimpleDomain\SimpleDomain.csproj" />
+  </ItemGroup>
+</Project>
