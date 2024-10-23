@@ -1,12 +1,6 @@
 {
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "nx-cloud",
-      "options": {
-        "nxCloudId": "66ed7cda68a2fa5a561c8011"
-      }
-    }
-  },
+  "nxCloudId": "66ed7cda68a2fa5a561c8011",
+  "plugins": ["@nx-dotnet/core"],
   "targetDefaults": {
     "format": {
       "cache": true
@@ -23,6 +17,5 @@
       "cache": true,
       "outputs": ["{workspaceRoot}/dist/test-results"]
     }
-  },
-  "plugins": ["@nx-dotnet/core"]
+  }
 }
