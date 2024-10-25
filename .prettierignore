@@ -1,9 +1,6 @@
-.nx
-
 examples
 packages
 docs
 
-dist
 CHANGELOG.md
 pnpm-lock.yaml
