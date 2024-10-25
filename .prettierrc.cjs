@@ -1,6 +1,13 @@
 module.exports = {
   singleQuote: true,
   semi: true,
-  bracketSpacing: true,
-  trailingComma: 'none'
+  bracketSameLine: true,
+  overrides: [
+    {
+      files: '*.md',
+      options: {
+        proseWrap: 'always',
+      },
+    },
+  ],
 };
