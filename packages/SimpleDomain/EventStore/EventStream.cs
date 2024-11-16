@@ -4,28 +4,22 @@
 /// The abstract base class of an event stream.
 /// </summary>
 /// <typeparam name="TAggregateRoot">The type of the aggregate root.</typeparam>
-public abstract class EventStream<TAggregateRoot> : IEventStream
+/// <remarks>
+/// Initializes a new instance of the <see cref="EventStream{TAggregateRoot}" /> class.
+/// </remarks>
+/// <param name="aggregateId">The id of the aggregate root.</param>
+public abstract class EventStream<TAggregateRoot>(string aggregateId) : IEventStream
     where TAggregateRoot : EventSourcedAggregateRoot
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="EventStream{TAggregateRoot}" /> class.
-    /// </summary>
-    /// <param name="aggregateId">The id of the aggregate root.</param>
-    protected EventStream(string aggregateId)
-    {
-        this.AggregateType = typeof(TAggregateRoot).FullName!;
-        this.AggregateId = aggregateId;
-    }
-
-    /// <summary>
     /// Gets the full CLR name of the aggregate root.
     /// </summary>
-    protected string AggregateType { get; private set; }
+    protected string AggregateType { get; private set; } = typeof(TAggregateRoot).FullName!;
 
     /// <summary>
     /// Gets the id of the aggregate root.
     /// </summary>
-    protected string AggregateId { get; private set; }
+    protected string AggregateId { get; private set; } = aggregateId;
 
     /// <inheritdoc />
     public abstract Task<IEventStream> Open(CancellationToken cancellationToken);

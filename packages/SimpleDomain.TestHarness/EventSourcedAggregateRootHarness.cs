@@ -13,7 +13,7 @@ public class EventSourcedAggregateRootHarness<TAggregateRoot>
 
     private TAggregateRoot aggregateRoot;
     private Func<TAggregateRoot> create = Activator.CreateInstance<TAggregateRoot>;
-    private IList<object> eventHistory = new List<object>();
+    private IList<object> eventHistory = [];
     private Action<TAggregateRoot> execute = _ => { };
 
     /// <summary>
