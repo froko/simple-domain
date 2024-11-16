@@ -20,7 +20,7 @@ internal class EventStoreStream<TAggregateRoot>(
         client.AppendToStreamAsync(
             this.snapshotName,
             StreamState.Any,
-            new[] { snapshot.SerializeSnapshot(typeNameStrategy) },
+            [snapshot.SerializeSnapshot(typeNameStrategy)],
             cancellationToken: cancellationToken
         );
 
@@ -56,7 +56,7 @@ internal class EventStoreStream<TAggregateRoot>(
         client.AppendToStreamAsync(
             this.aggregateName,
             StreamState.Any,
-            new[] { @event.SerializeInnerEvent(typeNameStrategy, headers) },
+            [@event.SerializeInnerEvent(typeNameStrategy, headers)],
             cancellationToken: cancellationToken
         );
 
