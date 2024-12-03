@@ -1,6 +1,6 @@
-import { defineConfig } from 'astro/config';
-import starlight from '@astrojs/starlight';
-import simplePlantUML from '@akebifiky/remark-simple-plantuml';
+import { defineConfig } from 'astro/config'
+import starlight from '@astrojs/starlight'
+import simplePlantUML from '@akebifiky/remark-simple-plantuml'
 
 // https://astro.build/config
 export default defineConfig({
@@ -71,4 +71,4 @@ export default defineConfig({
       ],
     }),
   ],
-});
+})
