@@ -1,0 +1,5 @@
+{
+  "extends": [
+    "github>froko/shared-configs//packages/renovate-config/index.json"
+  ]
+}
