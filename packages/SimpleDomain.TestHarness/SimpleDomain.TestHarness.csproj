@@ -5,8 +5,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SimpleDomain\SimpleDomain.csproj" />
-    <PackageReference Include="FluentAssertions" Version="7.0.0" />
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">
+    <PackageReference Include="FluentAssertions" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
