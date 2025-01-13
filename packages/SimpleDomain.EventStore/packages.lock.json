@@ -4,11 +4,11 @@
     "net9.0": {
       "EventStore.Client.Grpc.Streams": {
         "type": "Direct",
-        "requested": "[23.3.7, )",
-        "resolved": "23.3.7",
-        "contentHash": "Tmd7hUs8PCSSgz5dipOvXfwPnZz71OvnqksT8mdDFSYyj3a3rsnDMAr8DwCvMUcMdvT/8WYRYXuhQ/quw/o59w==",
+        "requested": "[23.3.8, )",
+        "resolved": "23.3.8",
+        "contentHash": "xMFeUT2+/V07AgcIb041oFZIbfTE7d9atfvlBvVt3tmqrPV0dTe6eirDjUAZElM2ze/wyFpywlR6L2/LKG5+aQ==",
         "dependencies": {
-          "EventStore.Client.Grpc": "23.3.7"
+          "EventStore.Client.Grpc": "23.3.8"
         }
       },
       "Microsoft.Extensions.DependencyInjection": {
@@ -47,8 +47,8 @@
       },
       "EventStore.Client.Grpc": {
         "type": "Transitive",
-        "resolved": "23.3.7",
-        "contentHash": "JkUvOW5Unb+kZ1XMoMM+lFvEsW4WliAEFmXr/bFfMCxiUmf8nvFKlu0dSBPJ8A9uZB4yhJ1Msl6m4h54n2I3Rg==",
+        "resolved": "23.3.8",
+        "contentHash": "rHQ8/umPRpI07uQV1cpqMt3fL8JRd8P+1WncIX0KULi4jz4Zg9xo1IHVvYXmljbAsJLSNy0QElf49+bjsBTAAg==",
         "dependencies": {
           "Google.Protobuf": "3.25.1",
           "Grpc.Net.Client": "2.60.0",
