@@ -39,7 +39,7 @@ public class EventStoreIntegrationTests : IAsyncLifetime
 
         using var eventStream = await CreateEventStream<MyEventSourcedAggregateRoot>();
         await eventStream.Append(
-            aggregateRoot.UncommittedEvents.OfType<VersionableEvent>().ToList(),
+            [.. aggregateRoot.UncommittedEvents.OfType<VersionableEvent>()],
             aggregateRoot.Version,
             new Dictionary<string, object>(),
             default
@@ -156,7 +156,7 @@ public class EventStoreIntegrationTests : IAsyncLifetime
     {
         using var eventStream = await CreateEventStream<TAggregateRoot>();
         await eventStream.Append(
-            aggregateRoot.UncommittedEvents.OfType<VersionableEvent>().ToList(),
+            [.. aggregateRoot.UncommittedEvents.OfType<VersionableEvent>()],
             aggregateRoot.Version,
             new Dictionary<string, object>(),
             default

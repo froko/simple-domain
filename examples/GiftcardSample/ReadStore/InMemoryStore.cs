@@ -15,14 +15,14 @@ public sealed class InMemoryStore : IReadStore, IWriteStore
 
     public Task<IReadOnlyCollection<GiftcardOverview>> GetActiveCards()
         => Task.FromResult<IReadOnlyCollection<GiftcardOverview>>(
-            this.giftcardOverviews.Where(g => g.Status == GiftcardStatus.Active).ToList());
+            [.. this.giftcardOverviews.Where(g => g.Status == GiftcardStatus.Active)]);
 
     public Task<GiftcardOverview?> GetOverview(string cardId)
         => Task.FromResult(this.giftcardOverviews.FirstOrDefault(g => g.CardId == cardId));
 
     public Task<IReadOnlyCollection<GiftcardTransaction>> GetTransactions(string cardId)
         => Task.FromResult<IReadOnlyCollection<GiftcardTransaction>>(
-            this.giftcardTransactions.Where(t => t.CardId == cardId).ToList());
+            [.. this.giftcardTransactions.Where(t => t.CardId == cardId)]);
 
     public Task Add(string cardId, int cardNumber, decimal balance, DateTime validUntil)
     {
