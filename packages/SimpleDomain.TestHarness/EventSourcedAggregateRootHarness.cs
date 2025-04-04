@@ -26,7 +26,7 @@ public class EventSourcedAggregateRootHarness<TAggregateRoot>
     /// by replaying events from history.
     /// </summary>
     /// <param name="events">The event history.</param>
-    public void LoadFromHistory(params object[] events) => this.eventHistory = new List<object>(events);
+    public void LoadFromHistory(params object[] events) => this.eventHistory = [.. events];
 
     /// <summary>
     /// Creates a new aggregate root under test.

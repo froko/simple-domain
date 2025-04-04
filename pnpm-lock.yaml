@@ -16,7 +16,7 @@ importers:
         version: 1.2.0
       '@nx-dotnet/core':
         specifier: ^2.4.5
-        version: 2.5.0(@nx/js@20.4.2(@babel/traverse@7.26.8)(@types/node@22.13.1)(nx@20.4.2)(typescript@5.7.3))(nx@20.4.2)(prettier@3.5.0)
+        version: 2.5.0(@nx/js@20.4.2(@babel/traverse@7.26.8)(@types/node@22.13.1)(nx@20.4.2)(typescript@5.7.3))(nx@20.4.2)(prettier@3.5.3)
       '@nx/js':
         specifier: 20.4.2
         version: 20.4.2(@babel/traverse@7.26.8)(@types/node@22.13.1)(nx@20.4.2)(typescript@5.7.3)
@@ -29,6 +29,9 @@ importers:
       nx:
         specifier: ^20.2.2
         version: 20.4.2
+      prettier:
+        specifier: ^3.5.3
+        version: 3.5.3
       semantic-release:
         specifier: ^24.2.0
         version: 24.2.2(typescript@5.7.3)
@@ -40,7 +43,7 @@ importers:
         version: 1.0.2
       '@astrojs/check':
         specifier: ^0.9.0
-        version: 0.9.4(prettier-plugin-astro@0.14.1)(prettier@3.5.0)(typescript@5.7.3)
+        version: 0.9.4(prettier-plugin-astro@0.14.1)(prettier@3.5.3)(typescript@5.7.3)
       '@astrojs/starlight':
         specifier: ^0.31.0
         version: 0.31.1(astro@5.2.5(@types/node@22.13.1)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0))
@@ -3449,6 +3452,11 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
 
+  prettier@3.5.3:
+    resolution: {integrity: sha512-QQtaxnoDJeAkDvDKWCLiwIXkTgRhwYDEQCghU9Z6q03iyek/rxRh/2lC3HB7P8sWT2xC/y5JDctPLBIGzHKbhw==}
+    engines: {node: '>=14'}
+    hasBin: true
+
   pretty-format@29.7.0:
     resolution: {integrity: sha512-Pdlw/oPxN+aXdmM9R00JVC9WVFoCLTKJvDVLgmJ+qAffBMxsV85l/Lu7sNx4zSzPyoL2euImuEwHhOXdEgNFZQ==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -4485,9 +4493,9 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.8
       '@jridgewell/trace-mapping': 0.3.25
 
-  '@astrojs/check@0.9.4(prettier-plugin-astro@0.14.1)(prettier@3.5.0)(typescript@5.7.3)':
+  '@astrojs/check@0.9.4(prettier-plugin-astro@0.14.1)(prettier@3.5.3)(typescript@5.7.3)':
     dependencies:
-      '@astrojs/language-server': 2.15.4(prettier-plugin-astro@0.14.1)(prettier@3.5.0)(typescript@5.7.3)
+      '@astrojs/language-server': 2.15.4(prettier-plugin-astro@0.14.1)(prettier@3.5.3)(typescript@5.7.3)
       chokidar: 4.0.3
       kleur: 4.1.5
       typescript: 5.7.3
@@ -4500,7 +4508,7 @@ snapshots:
 
   '@astrojs/internal-helpers@0.5.1': {}
 
-  '@astrojs/language-server@2.15.4(prettier-plugin-astro@0.14.1)(prettier@3.5.0)(typescript@5.7.3)':
+  '@astrojs/language-server@2.15.4(prettier-plugin-astro@0.14.1)(prettier@3.5.3)(typescript@5.7.3)':
     dependencies:
       '@astrojs/compiler': 2.10.4
       '@astrojs/yaml2ts': 0.2.2
@@ -4514,14 +4522,14 @@ snapshots:
       volar-service-css: 0.0.62(@volar/language-service@2.4.11)
       volar-service-emmet: 0.0.62(@volar/language-service@2.4.11)
       volar-service-html: 0.0.62(@volar/language-service@2.4.11)
-      volar-service-prettier: 0.0.62(@volar/language-service@2.4.11)(prettier@3.5.0)
+      volar-service-prettier: 0.0.62(@volar/language-service@2.4.11)(prettier@3.5.3)
       volar-service-typescript: 0.0.62(@volar/language-service@2.4.11)
       volar-service-typescript-twoslash-queries: 0.0.62(@volar/language-service@2.4.11)
       volar-service-yaml: 0.0.62(@volar/language-service@2.4.11)
       vscode-html-languageservice: 5.3.1
       vscode-uri: 3.1.0
     optionalDependencies:
-      prettier: 3.5.0
+      prettier: 3.5.3
       prettier-plugin-astro: 0.14.1
     transitivePeerDependencies:
       - typescript
@@ -5476,7 +5484,7 @@ snapshots:
 
   '@froko/prettier-config@1.2.0':
     dependencies:
-      prettier: 3.5.0
+      prettier: 3.5.3
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
@@ -5627,7 +5635,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.19.0
 
-  '@nx-dotnet/core@2.5.0(@nx/js@20.4.2(@babel/traverse@7.26.8)(@types/node@22.13.1)(nx@20.4.2)(typescript@5.7.3))(nx@20.4.2)(prettier@3.5.0)':
+  '@nx-dotnet/core@2.5.0(@nx/js@20.4.2(@babel/traverse@7.26.8)(@types/node@22.13.1)(nx@20.4.2)(typescript@5.7.3))(nx@20.4.2)(prettier@3.5.3)':
     dependencies:
       '@nx-dotnet/dotnet': 2.5.0(nx@20.4.2)
       '@nx-dotnet/utils': 2.5.0(nx@20.4.2)
@@ -5643,7 +5651,7 @@ snapshots:
       yargs-parser: 21.1.1
     optionalDependencies:
       '@nx/js': 20.4.2(@babel/traverse@7.26.8)(@types/node@22.13.1)(nx@20.4.2)(typescript@5.7.3)
-      prettier: 3.5.0
+      prettier: 3.5.3
 
   '@nx-dotnet/dotnet@2.5.0(nx@20.4.2)':
     dependencies:
@@ -8590,6 +8598,8 @@ snapshots:
 
   prettier@3.5.0: {}
 
+  prettier@3.5.3: {}
+
   pretty-format@29.7.0:
     dependencies:
       '@jest/schemas': 29.6.3
@@ -9470,12 +9480,12 @@ snapshots:
     optionalDependencies:
       '@volar/language-service': 2.4.11
 
-  volar-service-prettier@0.0.62(@volar/language-service@2.4.11)(prettier@3.5.0):
+  volar-service-prettier@0.0.62(@volar/language-service@2.4.11)(prettier@3.5.3):
     dependencies:
       vscode-uri: 3.1.0
     optionalDependencies:
       '@volar/language-service': 2.4.11
-      prettier: 3.5.0
+      prettier: 3.5.3
 
   volar-service-typescript-twoslash-queries@0.0.62(@volar/language-service@2.4.11):
     dependencies:

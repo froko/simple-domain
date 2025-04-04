@@ -30,7 +30,7 @@ public class InMemoryIntegrationTests
 
         using var eventStream = await this.CreateEventStream<MyEventSourcedAggregateRoot>();
         await eventStream.Append(
-            aggregateRoot.UncommittedEvents.OfType<VersionableEvent>().ToList(),
+            [.. aggregateRoot.UncommittedEvents.OfType<VersionableEvent>()],
             aggregateRoot.Version,
             new Dictionary<string, object>(),
             default);
@@ -139,7 +139,7 @@ public class InMemoryIntegrationTests
     {
         using var eventStream = await this.CreateEventStream<TAggregateRoot>();
         await eventStream.Append(
-            aggregateRoot.UncommittedEvents.OfType<VersionableEvent>().ToList(),
+            [.. aggregateRoot.UncommittedEvents.OfType<VersionableEvent>()],
             aggregateRoot.Version,
             new Dictionary<string, object>(),
             default);
