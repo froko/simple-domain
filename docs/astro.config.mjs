@@ -11,9 +11,13 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'SimpleDomain',
-      social: {
-        github: 'https://github.com/froko/simple-domain',
-      },
+      social: [
+        {
+          icon: 'github',
+          label: 'GitHub',
+          href: 'https://github.com/froko/simple-domain',
+        },
+      ],
       sidebar: [
         {
           label: 'Architecture',
