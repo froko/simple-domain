@@ -4,20 +4,20 @@
     "net9.0": {
       "EventStore.Client.Grpc.Streams": {
         "type": "Direct",
-        "requested": "[23.3.8, )",
-        "resolved": "23.3.8",
-        "contentHash": "xMFeUT2+/V07AgcIb041oFZIbfTE7d9atfvlBvVt3tmqrPV0dTe6eirDjUAZElM2ze/wyFpywlR6L2/LKG5+aQ==",
+        "requested": "[23.3.9, )",
+        "resolved": "23.3.9",
+        "contentHash": "jsHDMTKlboIawzIGIr5gbcntx630R8A4Qzed5NQawOE1FHTnqySBflpKp5U5yqlapIgVzY7xzTyMNV0k1XSoxw==",
         "dependencies": {
-          "EventStore.Client.Grpc": "23.3.8"
+          "EventStore.Client.Grpc": "23.3.9"
         }
       },
       "Microsoft.Extensions.DependencyInjection": {
         "type": "Direct",
-        "requested": "[9.0.3, )",
-        "resolved": "9.0.3",
-        "contentHash": "lDbxJpkl6X8KZGpkAxgrrthQ42YeiR0xjPp7KPx+sCPc3ZbpaIbjzd0QQ+9kDdK2RU2DOl3pc6tQyAgEZY3V0A==",
+        "requested": "[9.0.5, )",
+        "resolved": "9.0.5",
+        "contentHash": "N1Mn0T/tUBPoLL+Fzsp+VCEtneUhhxc1//Dx3BeuQ8AX+XrMlYCfnp2zgpEXnTCB7053CLdiqVWPZ7mEX6MPjg==",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.3"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.5"
         }
       },
       "Microsoft.SourceLink.GitHub": {
@@ -47,8 +47,8 @@
       },
       "EventStore.Client.Grpc": {
         "type": "Transitive",
-        "resolved": "23.3.8",
-        "contentHash": "rHQ8/umPRpI07uQV1cpqMt3fL8JRd8P+1WncIX0KULi4jz4Zg9xo1IHVvYXmljbAsJLSNy0QElf49+bjsBTAAg==",
+        "resolved": "23.3.9",
+        "contentHash": "vsrxZLqHhO1RqCO1gl+wbJP2Mkbbst2caiz3PtvkHbC26vAdbChOw4538eTSNrcq75yQsP6qOOtNj4nCfLYe1A==",
         "dependencies": {
           "Google.Protobuf": "3.25.1",
           "Grpc.Net.Client": "2.60.0",
@@ -103,8 +103,8 @@
       },
       "Microsoft.Extensions.DependencyInjection.Abstractions": {
         "type": "Transitive",
-        "resolved": "9.0.3",
-        "contentHash": "TfaHPSe39NyL2wxkisRxXK7xvHGZYBZ+dy3r+mqGvnxKgAPdHkMu3QMQZI4pquP6W5FIQBqs8FJpWV8ffCgDqQ=="
+        "resolved": "9.0.5",
+        "contentHash": "cjnRtsEAzU73aN6W7vkWy8Phj5t3Xm78HSqgrbh/O4Q9SK/yN73wZVa21QQY6amSLQRQ/M8N+koGnY6PuvKQsw=="
       },
       "Microsoft.Extensions.Logging": {
         "type": "Transitive",
@@ -156,7 +156,7 @@
       "simpledomain": {
         "type": "Project",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection": "[9.0.3, )",
+          "Microsoft.Extensions.DependencyInjection": "[9.0.5, )",
           "System.Linq.Async": "[6.0.1, )"
         }
       }
