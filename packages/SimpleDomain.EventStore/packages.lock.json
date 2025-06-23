@@ -38,12 +38,9 @@
       },
       "System.Linq.Async": {
         "type": "Direct",
-        "requested": "[6.0.1, )",
-        "resolved": "6.0.1",
-        "contentHash": "0YhHcaroWpQ9UCot3Pizah7ryAzQhNvobLMSxeDIGmnXfkQn8u5owvpOH0K6EVB+z9L7u6Cc4W17Br/+jyttEQ==",
-        "dependencies": {
-          "Microsoft.Bcl.AsyncInterfaces": "6.0.0"
-        }
+        "requested": "[6.0.3, )",
+        "resolved": "6.0.3",
+        "contentHash": "hSHiq2m1ky7zUQgTp+/2h1K3lABIQ+GltRixoclHPg/Sc1vnfeS6g/Uy5moOVZKrZJdQiFPFZd6OobBp3tZcFg=="
       },
       "EventStore.Client.Grpc": {
         "type": "Transitive",
@@ -90,11 +87,6 @@
         "type": "Transitive",
         "resolved": "2023.3.0",
         "contentHash": "PHfnvdBUdGaTVG9bR/GEfxgTwWM0Z97Y6X3710wiljELBISipSfF5okn/vz+C2gfO+ihoEyVPjaJwn8ZalVukA=="
-      },
-      "Microsoft.Bcl.AsyncInterfaces": {
-        "type": "Transitive",
-        "resolved": "6.0.0",
-        "contentHash": "UcSjPsst+DfAdJGVDsu346FX0ci0ah+lw3WRtn18NUwEqRt70HaOQ7lI72vy3+1LxtqI3T5GWwV39rQSrCzAeg=="
       },
       "Microsoft.Build.Tasks.Git": {
         "type": "Transitive",
@@ -157,7 +149,7 @@
         "type": "Project",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "[9.0.6, )",
-          "System.Linq.Async": "[6.0.1, )"
+          "System.Linq.Async": "[6.0.3, )"
         }
       }
     }
