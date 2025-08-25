@@ -4,9 +4,9 @@
     "net9.0": {
       "bbv.LambdaTale": {
         "type": "Direct",
-        "requested": "[2.9.305, )",
-        "resolved": "2.9.305",
-        "contentHash": "UyXe4TTWeNLNwj9OuWEqkJoTW0fE+frytwsRwfH8J0K0heOPHNr4DEe5QbjHg7kqZ84pRMqPwhobE7n5g8vE+g==",
+        "requested": "[2.9.306, )",
+        "resolved": "2.9.306",
+        "contentHash": "Opa7mYO35Zr2clDZEUu9HaKZTQPCEZVrU5+ONssxmEST5LQ1giVHF4iDSU3qzI404zxeeqGwDPlP+oos6A/9jw==",
         "dependencies": {
           "xunit.core": "[2.9.3, 2.10.0)",
           "xunit.extensibility.execution": "[2.9.3, 2.10.0)"
