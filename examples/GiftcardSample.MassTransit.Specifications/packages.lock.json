@@ -50,14 +50,14 @@
       },
       "xunit.runner.visualstudio": {
         "type": "Direct",
-        "requested": "[3.1.4, )",
-        "resolved": "3.1.4",
-        "contentHash": "5mj99LvCqrq3CNi06xYdyIAXOEh+5b33F2nErCzI5zWiDdLHXiPXEWFSUAF8zlIv0ZWqjZNCwHTQeAPYbF3pCg=="
+        "requested": "[3.1.5, )",
+        "resolved": "3.1.5",
+        "contentHash": "tKi7dSTwP4m5m9eXPM2Ime4Kn7xNf4x4zT9sdLO/G4hZVnQCRiMTWoSZqI/pYTVeI27oPPqHBKYI/DjJ9GsYgA=="
       },
       "MassTransit.Abstractions": {
         "type": "Transitive",
-        "resolved": "8.5.2",
-        "contentHash": "5rgaFoJXGpfOeUDegkS2h08NvGwW6Qdkj5gou9kBfMb39tlWWyM/S3c/HWrpaXUrlE+MQlK3o6xHM85hJtP2aA=="
+        "resolved": "8.5.3",
+        "contentHash": "YXtqlrgVdynjUDgPZrihYN8rdaw+gWvYMgPAUJAsi22qA1xPzwpU7GCiJJODXWZHMz2TSufF92vTr4ljYx9OIQ=="
       },
       "Microsoft.CodeCoverage": {
         "type": "Transitive",
@@ -273,7 +273,7 @@
         "type": "Project",
         "dependencies": {
           "GiftcardSample": "[1.0.0, )",
-          "MassTransit": "[8.5.2, )",
+          "MassTransit": "[8.5.3, )",
           "SimpleDomain": "[1.0.0, )"
         }
       },
@@ -286,11 +286,11 @@
       },
       "MassTransit": {
         "type": "CentralTransitive",
-        "requested": "[8.5.2, )",
-        "resolved": "8.5.2",
-        "contentHash": "LsaJjHcyUHAm/s7aO5XkUkp8mYcwyVHug2jrLBaUrqau+lXynz8+e7wWIEfJJ5d/+wGKOdiX+oI9C1QYNoeZaQ==",
+        "requested": "[8.5.3, )",
+        "resolved": "8.5.3",
+        "contentHash": "t4e/anRrUTOhI+LMgPBWWcCMlQdNMUYdxErfRkyyk39kgxlJP2rd6rhdE28Lt/kuytI95rJdBVZPiRaGihdimg==",
         "dependencies": {
-          "MassTransit.Abstractions": "8.5.2",
+          "MassTransit.Abstractions": "8.5.3",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.0",
           "Microsoft.Extensions.Diagnostics.HealthChecks": "9.0.0",
           "Microsoft.Extensions.Hosting.Abstractions": "9.0.0",
