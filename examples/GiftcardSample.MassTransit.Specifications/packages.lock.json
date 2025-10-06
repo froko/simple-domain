@@ -56,8 +56,8 @@
       },
       "MassTransit.Abstractions": {
         "type": "Transitive",
-        "resolved": "8.5.3",
-        "contentHash": "YXtqlrgVdynjUDgPZrihYN8rdaw+gWvYMgPAUJAsi22qA1xPzwpU7GCiJJODXWZHMz2TSufF92vTr4ljYx9OIQ=="
+        "resolved": "8.5.4",
+        "contentHash": "6rIDZNr+mldYiIyiFXY4l4p3BsUDVQDtHpRwoZOQY7/T6TboAqCV4fbLM4tDwZqV8OOWbJHs1a4wQyyAOYwHGA=="
       },
       "Microsoft.CodeCoverage": {
         "type": "Transitive",
@@ -273,7 +273,7 @@
         "type": "Project",
         "dependencies": {
           "GiftcardSample": "[1.0.0, )",
-          "MassTransit": "[8.5.3, )",
+          "MassTransit": "[8.5.4, )",
           "SimpleDomain": "[1.0.0, )"
         }
       },
@@ -286,11 +286,11 @@
       },
       "MassTransit": {
         "type": "CentralTransitive",
-        "requested": "[8.5.3, )",
-        "resolved": "8.5.3",
-        "contentHash": "t4e/anRrUTOhI+LMgPBWWcCMlQdNMUYdxErfRkyyk39kgxlJP2rd6rhdE28Lt/kuytI95rJdBVZPiRaGihdimg==",
+        "requested": "[8.5.4, )",
+        "resolved": "8.5.4",
+        "contentHash": "uNmFkIICpCZ6AWSJfWfQJc4jjVhQygdPY4/yFEiOZkIVbwEbpFrJTjThzSSinbZFCtyYQMBN6RqHghVMwQy7pA==",
         "dependencies": {
-          "MassTransit.Abstractions": "8.5.3",
+          "MassTransit.Abstractions": "8.5.4",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.0",
           "Microsoft.Extensions.Diagnostics.HealthChecks": "9.0.0",
           "Microsoft.Extensions.Hosting.Abstractions": "9.0.0",
